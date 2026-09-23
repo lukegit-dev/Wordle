@@ -10,16 +10,16 @@ Players are presented with a string of characters and attempt to find the hidden
     2.2 Yellow - The guessed letter exists in the word, but is in the wrong place
     2.3 No change - The guessed letter does not exist in the word
 3. You have 6 attempts to guess the correct word. If you fail to guess correctly after those 6 attempts, the game ends
-## Additional Feature Ideas
-1. **Indle**:
-    1.1 6 letter word is chosen
-    1.2 If the player guesses correctly, the word decreases in size by 1 letter, and is chosen using the letters of the previous word
-    1.3 Example: design -> dings -> sing -> gin
 ## Target Audience
 Puzzle players of any age who enjoy a challenge / brain teasers would be the primary audience for this game.
 ## Requirements
 - HTML & CSS - Website design visuals
 - JS - Programming Wordle
+## Additional Feature Ideas
+1. **Indle**:
+    1.1 6 letter word is chosen
+    1.2 If the player guesses correctly, the word decreases in size by 1 letter, and is chosen using the letters of the previous word
+    1.3 Example: design -> dings -> sing -> gin
 ## Design
 - Coming soon
 ## Development
