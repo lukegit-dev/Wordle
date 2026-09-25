@@ -1,16 +1,17 @@
 .word {  /* Align Wordle letters to centre screen */
     display: flex;  /* Flexible element allowing the centre transformation */
     justify-content: center;
-    gap: 8px;  /* Gap between each letter */
-    margin-top: 8px;  /* same top gap as normal spacing gap */
+    gap: 5px;  /* Gap between each letter */
+    margin-top: 5px;  /* same top gap as normal spacing gap */
 }
 
 input {  /* Wordle letters */
     width: 80px;
     height: 80px;
-    font-size: 30px;
+    font-size: 220%;
     text-align: center;
     text-transform: uppercase;
+    background-color: rgb(180, 180, 180);
     border: 4px solid rgb(0, 0, 0);
     align-self: center;
 }
