@@ -19,13 +19,10 @@ Puzzle players of any age who enjoy a challenge / brain teasers would be the pri
 - HTML & CSS - Website design visuals
 - JS - Programming Wordle
 ## Additional Feature Ideas
-1. **Indle**:
-
-    1.1 6 letter word is chosen
-
-    1.2 If the player guesses correctly, the word decreases in size by 1 letter, and is chosen using the letters of the previous word
-
-    1.3 Example: design -> dings -> sing -> gin
+### **ScrambL**
+1. 6 letter word is chosen
+2. If the player guesses correctly, the word decreases in size by 1 letter, and is chosen using the letters of the previous word
+3. Example: design -> dings -> sing -> gin
 ## Design
 - Coming soon
 ## Development
