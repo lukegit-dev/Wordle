@@ -13,6 +13,10 @@ Players are presented with a string of characters and attempt to find the hidden
 
     2.3 No change - The guessed letter does not exist in the word.
 3. You have 6 attempts to guess the correct word. If you fail to guess correctly after those 6 attempts, the game ends.
+### Additional Features - **ScrambL**
+1. 6 letter word is chosen, and must be guessed within 6 tries.
+2. If the player guesses correctly, the word size decreases by 1 letter (picked at random). A new word is created.
+3. Example: design -> dings -> sing -> gin
 ## Target Audience
 Puzzle players of any age who enjoy a challenge / brain teasers would be the primary audience for this game.
 ## Requirements
@@ -26,13 +30,9 @@ Puzzle players of any age who enjoy a challenge / brain teasers would be the pri
 ### Non-functional Requirements
 - Usability - Simple to learn and play.
 - Accessibility - Good use of colour contrast.
-- Performance - Page should load fast. Choosing and checking word against word list should be under ~2 seconds (uptrends.com, 2025)-
+- Performance - Page should load fast. Choosing and checking word against word list should be under ~2 seconds (uptrends.com, 2025).
 - Visual Design - Simple design, focused centre-aligned input boxes for each guess. Clear user feedback (green, yellow, and no colour change guesses, win / loss message) and instructions on how to play.
-## Additional Features
-### **ScrambL**
-1. 6 letter word is chosen.
-2. If the player guesses correctly, the word decreases in size by 1 letter, and is chosen using the letters of the previous word.
-3. Example: design -> dings -> sing -> gin
+
 ## Design
 - Coming soon
 ## Development
