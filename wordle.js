@@ -16,7 +16,7 @@ function submitGuess() {
     
     // If our current row number is beyond the amount of rows we have, then they lost
     if (currentRow >= rows.length) {
-        console.log("Ran out of guesses");
+        console.log("User ran out of guesses");
         // Will implement a visual message display here
         return;
     }
@@ -33,7 +33,6 @@ function submitGuess() {
         // If our letter is not blank and is a letter from A-Z
         if (letter !== "" && LETTERS.has(letter)) {
             letters.push(letter);  // Add letter to our letters
-            console.log("pushed letter",letter)
         } else {
             console.log("Invalid word! Not filled.")
             isValid = false;  // Blank character
