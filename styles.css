@@ -1,3 +1,10 @@
+.word {  /* Align Wordle letters to centre screen */
+    display: flex;  /* Flexible element allowing the centre transformation */
+    justify-content: center;
+    gap: 8px;  /* Gap between each letter */
+    margin-top: 8px;  /* same top gap as normal spacing gap */
+}
+
 input {  /* Wordle letters */
     width: 80px;
     height: 80px;
@@ -9,5 +16,5 @@ input {  /* Wordle letters */
 }
 
 input:focus {  /* Which wordle letter input box is currently selected */
-     border: 6px solid rgb(0, 255, 0);
+    border: 6px solid rgb(0, 255, 0);
 }
