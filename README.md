@@ -23,7 +23,6 @@ Puzzle players of any age who enjoy a challenge / brain teasers would be the pri
 - Letter colour feedback once word is guessed (explained in main concept).
 - Limited to a set amount of guesses.
 - Player should be able to start a new game.
-For this alternate Wordle, I have chosen to use HTML for visualizing each word, CSS for additional website design, and JS for my project to function (checking user letter positions, letter assignment colours, if the user guessed the correct word).
 ### Non-functional Requirements
 - Usability - Simple to learn and play.
 - Accessibility - Good use of colour contrast.
