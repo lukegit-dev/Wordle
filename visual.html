@@ -6,50 +6,57 @@
         <title>Wordle</title>
         <link rel="stylesheet" href="styles.css">
     </head>
+    <script src="wordle.js"></script>
     <body>
-        <h1>ScrambL</h1>
-        <div style="margin-top: 100px;"></div>
-        <div class="word" id="1">
-            <input type="text" id="wordle-letter-1" maxlength="1">
-            <input type="text" id="wordle-letter-2" maxlength="1">
-            <input type="text" id="wordle-letter-3" maxlength="1">
-            <input type="text" id="wordle-letter-4" maxlength="1">
-            <input type="text" id="wordle-letter-5" maxlength="1">
+        <h1 style="display: flex; justify-content: center; color: white;">ScrambL</h1>
+        <div style="margin-top: 100px;" data-row="1"></div> <!-- data-row allows every each input box to be selected at once -->
+        <div class="word" id="1" data-row="1">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
         </div>
-        <div class="word" id="2">
-            <input type="text" id="wordle-letter-1" maxlength="1">
-            <input type="text" id="wordle-letter-2" maxlength="1">
-            <input type="text" id="wordle-letter-3" maxlength="1">
-            <input type="text" id="wordle-letter-4" maxlength="1">
-            <input type="text" id="wordle-letter-5" maxlength="1">
+        <div class="word" id="2" data-row="2">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
         </div>
-        <div class="word" id="3">
-            <input type="text" id="wordle-letter-1" maxlength="1">
-            <input type="text" id="wordle-letter-2" maxlength="1">
-            <input type="text" id="wordle-letter-3" maxlength="1">
-            <input type="text" id="wordle-letter-4" maxlength="1">
-            <input type="text" id="wordle-letter-5" maxlength="1">
+        <div class="word" id="3" data-row="3">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
         </div>
-        <div class="word" id="4">
-            <input type="text" id="wordle-letter-1" maxlength="1">
-            <input type="text" id="wordle-letter-2" maxlength="1">
-            <input type="text" id="wordle-letter-3" maxlength="1">
-            <input type="text" id="wordle-letter-4" maxlength="1">
-            <input type="text" id="wordle-letter-5" maxlength="1">
+        <div class="word" id="4" data-row="4">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
         </div>
-        <div class="word" id="5">
-            <input type="text" id="wordle-letter-1" maxlength="1">
-            <input type="text" id="wordle-letter-2" maxlength="1">
-            <input type="text" id="wordle-letter-3" maxlength="1">
-            <input type="text" id="wordle-letter-4" maxlength="1">
-            <input type="text" id="wordle-letter-5" maxlength="1">
+        <div class="word" id="5" data-row="5">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
         </div>
-        <div class="word" id="6">
-            <input type="text" id="wordle-letter-1" maxlength="1">
-            <input type="text" id="wordle-letter-2" maxlength="1">
-            <input type="text" id="wordle-letter-3" maxlength="1">
-            <input type="text" id="wordle-letter-4" maxlength="1">
-            <input type="text" id="wordle-letter-5" maxlength="1">
+        <div class="word" id="6" data-row="6">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
+            <input type="text" class="letter" maxlength="1">
         </div>
     </body>
 </html>
