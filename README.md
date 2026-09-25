@@ -1,4 +1,4 @@
-# Wordle
+# ScrambL - A descendant of Wordle
 Players are presented with a string of characters and attempt to find the hidden word or number sequence. Players will be informed when they find a correct character and whether it is in the correct position.
 # Table of Contents
 - Coming soon
@@ -22,14 +22,14 @@ Puzzle players of any age who enjoy a challenge / brain teasers would be the pri
 - Word validation (word must exist).
 - Letter colour feedback once word is guessed (explained in main concept).
 - Limited to a set amount of guesses.
-- Player should be able to start a new gfame.
+- Player should be able to start a new game.
 For this alternate Wordle, I have chosen to use HTML for visualizing each word, CSS for additional website design, and JS for my project to function (checking user letter positions, letter assignment colours, if the user guessed the correct word).
 ### Non-functional Requirements
 - Usability - Simple to learn and play.
 - Accessibility - Good use of colour contrast.
 - Performance - Page should load fast. Choosing and checking word against word list should be under ~2 seconds (uptrends.com, 2025)-
 - Visual Design - Simple design, focused centre-aligned input boxes for each guess. Clear user feedback (green, yellow, and no colour change guesses, win / loss message) and instructions on how to play.
-## Additional Feature Ideas
+## Additional Features
 ### **ScrambL**
 1. 6 letter word is chosen.
 2. If the player guesses correctly, the word decreases in size by 1 letter, and is chosen using the letters of the previous word.
