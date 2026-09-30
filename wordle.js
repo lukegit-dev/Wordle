@@ -70,27 +70,44 @@ function submitGuess() {
         isValid = false;
     }
 
+    let allCorrect = 0;
+
+    console.log(guess,"validity is", isValid);
+
     if (isValid) {
         // Loop through each letter
         for (let i = 0; i < inputs.length; i++) {
             const userLetter = inputs[i].value.toUpperCase();
             const wordLetter = currentWord[i];
             
-            // Add attribute to input
+            // Add attribute to input; set to read only and unselectable;
             inputs[i].setAttribute("readonly", true);
             inputs[i].style = "pointer-events: none";
 
             if (userLetter === wordLetter) {  // if their word letter is in the same position as the chosen current word letter
-                inputs[i].style.backgroundColor = "rgb(0, 200, 0)";  // Green background
+                allCorrect++;  // Track how man letters are correct
+                inputs[i].style.backgroundColor = "rgb(0, 220, 0)";  // Green background
             } else if (currentWord.includes(userLetter)) {   // Word included but wrong position
-                inputs[i].style.backgroundColor = "rgb(200, 200, 0)";  // Yellow background
+                inputs[i].style.backgroundColor = "rgb(220, 220, 0)";  // Yellow background
             } else {  // not in word
                 inputs[i].style.backgroundColor = "rgb(255, 255, 255)";  // White background
             }
         }
+
+        
+
+        if (allCorrect === inputs.length) {
+            console.log("YOU WON!");
+            // Go through each word from currentRow and letters in them, set them all to read only and unselectable
+            for (let x = currentRow+1; x < rows.length; x++) {
+                const inputBoxes = rows[x].querySelectorAll(".letter");
+                for (let y = 0; y < inputBoxes.length; y++) {
+                    inputBoxes[y].setAttribute("readonly", true);
+                    inputBoxes[y].style = "pointer-events: none";
+                }
+            }
+        }
+
+        currentRow++;
     }
-
-    console.log(guess,"validity is", isValid);
-
-    // currentRow++ will be used eventually
 }
