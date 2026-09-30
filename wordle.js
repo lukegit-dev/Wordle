@@ -76,6 +76,10 @@ function submitGuess() {
             const userLetter = inputs[i].value.toUpperCase();
             const wordLetter = currentWord[i];
             
+            // Add attribute to input
+            inputs[i].setAttribute("readonly", true);
+            inputs[i].style = "pointer-events: none";
+
             if (userLetter === wordLetter) {  // if their word letter is in the same position as the chosen current word letter
                 inputs[i].style.backgroundColor = "rgb(0, 200, 0)";  // Green background
             } else if (currentWord.includes(userLetter)) {   // Word included but wrong position
