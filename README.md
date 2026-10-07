@@ -13,15 +13,15 @@ Players are presented with a string of characters and attempt to find the hidden
 
     2.3 No change - The guessed letter does not exist in the word.
 3. You have 6 attempts to guess the correct word. If you fail to guess correctly after those 6 attempts, the game ends.
-## 1.2 Additional Features - **ScrambL**
-1. 6 letter word is chosen, and must be guessed within 6 tries.
-2. If the player guesses correctly, the word size decreases by 1 letter (picked at random). A new word is created.
-3. Example: design -> dings -> sing -> gin
+## 1.2 Additional Features - **Last letter**
+1. 5 letter word is chosen, and must be guessed within 6 tries.
+2. If the player guesses correctly, a new word is created from the last letter of the correct word.
+3. The user continuously guesses until they get a word wrong. Their streak is recorded.
 ## 1.3 Target Audience
 Puzzle players of any age who enjoy a challenge / brain teasers would be the primary audience for this game.
 ## 1.4 Requirements
 ### 1.4.1 Functional Requirements
-- 6 by 5 grid of letter input boxes.
+- 5 by 6 grid of letter input boxes.
 - Single letter uppercase acceptance for each box.
 - Word validation (word must exist).
 - Letter colour feedback once word is guessed (explained in main concept).
