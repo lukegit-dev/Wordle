@@ -70,10 +70,7 @@ function submitGuess() {
 
     console.log("User word is", guess)
 
-    if (
-        (guess.length == 5 && !WORDS_5_LETTERS.has(guess)) ||
-        (guess.length == 4 && !WORDS_4_LETTERS.has(guess)) ||
-        (guess.length == 3 && !WORDS_3_LETTERS.has(guess))) {
+    if (guess.length == 5 && !WORDS_5_LETTERS.has(guess)) {
         isValid = false;
     }
 
