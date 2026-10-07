@@ -9,6 +9,8 @@ document.addEventListener("keydown", (event) => {
 
 let currentRow = 0;  // A counter used to track which row we are on
 let currentWord = [];
+let currentStreak = 0;
+let topStreak = 0;
 
 function setCurrentWord() {
     const rows = document.querySelectorAll(".word");  // Find all word classes from divs
@@ -16,11 +18,15 @@ function setCurrentWord() {
     console.log("There are", rows.length, "rows");
     
     if (rows.length === 6) {
-        // the [...WORDS_6_LETTERS]
-        currentWord = [...WORDS_6_LETTERS][Math.floor(Math.random() * [...WORDS_6_LETTERS].length)];  // Randomly choose a word from 6 letter word list
+        // the [...WORDS_6_LETTERS] sets the set to an array
+        currentWord = [...WORDS_5_LETTERS][Math.floor(Math.random() * [...WORDS_5_LETTERS].length)];  // Randomly choose a word from 6 letter word list
         console.log(currentWord);
         
     }
+
+    let lettersInWord = currentWord.split("");
+
+    console.log(lettersInWord);
 }
 // check if elements are loaded BEFORE checking for rows; otherwise it will display as zero rows.
 document.addEventListener("DOMContentLoaded", () => {
@@ -34,7 +40,9 @@ function submitGuess() {
     
     // If our current row number is beyond the amount of rows we have, then they lost
     if (currentRow >= rows.length) {
-        console.log("User ran out of guesses");
+        topStreak = currentStreak;
+        currentStreak = 0;  // reset users current streak to zero
+        console.log("User ran out of guesses. Top streak:",topStreak);
         // Will implement a visual message display here
         return;
     }
@@ -63,7 +71,6 @@ function submitGuess() {
     console.log("User word is", guess)
 
     if (
-        (guess.length == 6 && !WORDS_6_LETTERS.has(guess)) ||
         (guess.length == 5 && !WORDS_5_LETTERS.has(guess)) ||
         (guess.length == 4 && !WORDS_4_LETTERS.has(guess)) ||
         (guess.length == 3 && !WORDS_3_LETTERS.has(guess))) {
@@ -97,6 +104,7 @@ function submitGuess() {
         
 
         if (allCorrect === inputs.length) {
+            currentStreak += 1;
             console.log("YOU WON!");
             // Go through each word from currentRow and letters in them, set them all to read only and unselectable
             for (let x = currentRow+1; x < rows.length; x++) {
