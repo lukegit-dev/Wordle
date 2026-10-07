@@ -2,15 +2,11 @@
 // Constants that we need throughout the program
 const LETTERS = new Set("ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""));
 
-// Detect whether the enter key is pressed
-document.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") submitGuess();
-});
-
 let currentRow = 0;  // A counter used to track which row we are on
 let currentWord = [];
 let currentStreak = 0;
 let topStreak = 0;
+let gameOver = false;
 
 function setCurrentWord() {
     const rows = document.querySelectorAll(".word");  // Find all word classes from divs
@@ -18,8 +14,7 @@ function setCurrentWord() {
     console.log("There are", rows.length, "rows");
     
     if (rows.length === 6) {
-        // the [...WORDS_6_LETTERS] sets the set to an array
-        currentWord = [...WORDS_5_LETTERS][Math.floor(Math.random() * [...WORDS_5_LETTERS].length)];  // Randomly choose a word from 6 letter word list
+        currentWord = [...WORDS_5_LETTERS][Math.floor(Math.random() * [...WORDS_5_LETTERS].length)];  // Randomly choose a word from 5 letter word list
         console.log(currentWord);
         
     }
@@ -28,6 +23,34 @@ function setCurrentWord() {
 
     console.log(lettersInWord);
 }
+
+// Detect whether the enter key is pressed
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        if (gameOver) {
+            console.log("Game over", topStreak)
+            const rows = document.querySelectorAll(".word");
+            // Go through each word from currentRow and letters in them, set them all to read only and unselectable
+            for (let x = 0; x < rows.length; x++) {
+                const inputBoxes = rows[x].querySelectorAll(".letter");
+                for (let y = 0; y < inputBoxes.length; y++) {
+                    inputBoxes[y].value = "";  // Clear the input box
+                    inputBoxes[y].style.backgroundColor = "rgb(180, 180, 180)";  // change colour back to default
+                    // turn off read only and unselectable
+                    inputBoxes[y].removeAttribute("readonly");
+                    inputBoxes[y].style = "pointer-events: auto";
+                }
+            }
+
+            setCurrentWord();
+
+            gameOver = false;
+        } else {
+            submitGuess();
+        }
+    }
+});
+
 // check if elements are loaded BEFORE checking for rows; otherwise it will display as zero rows.
 document.addEventListener("DOMContentLoaded", () => {
     setCurrentWord()
@@ -40,7 +63,6 @@ function submitGuess() {
     
     // If our current row number is beyond the amount of rows we have, then they lost
     if (currentRow >= rows.length) {
-        topStreak = currentStreak;
         currentStreak = 0;  // reset users current streak to zero
         console.log("User ran out of guesses. Top streak:",topStreak);
         // Will implement a visual message display here
@@ -111,6 +133,12 @@ function submitGuess() {
                     inputBoxes[y].style = "pointer-events: none";
                 }
             }
+
+            gameOver = true;
+
+            return;
+
+            // Press enter to reset / restart the game
         }
 
         currentRow++;
