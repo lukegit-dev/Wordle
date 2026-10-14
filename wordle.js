@@ -15,27 +15,25 @@ function setCurrentWord() {
     
     if (rows.length === 6) {
         currentWord = [...WORDS_5_LETTERS][Math.floor(Math.random() * [...WORDS_5_LETTERS].length)];  // Randomly choose a word from 5 letter word list
-        console.log(currentWord);
+        console.log("Chosen word is", currentWord);  // Output correct word for testing and validations
     }
 
-    let lettersInWord = currentWord.split("");
-
-    console.log(lettersInWord);
+    let lettersInWord = currentWord.split("");  // Split word into letters and store in an array
 
     const allInputs = document.querySelectorAll(".word input");  // Get all input boxes from the word divs
 
-    allInputs.forEach((input, index) => {  // loop through each letter box
-        input.addEventListener("input", () => {
-            // if user typed a character
-            if (input.value.length >= 1) {
+    allInputs.forEach((input, index) => {  // Loop through each letter box
+        input.addEventListener("input", () => {  // If a letter is typed into the letter input box
+            // If user typed a character and the index is still within the minimum range 
+            if (input.value.length >= 1 && index < allInputs.length - 1) {
                 allInputs[index + 1].focus();  // Move to the next letter box
             }
         });
 
-        // Handle backspacing backward
-        input.addEventListener("keydown", (e) => {
-            if (e.key === "Backspace" && input.value.length === 0) {
-                allInputs[index - 1].focus();
+        input.addEventListener("keydown", (e) => {  // If a key is pressed
+            // If the backspace key is pressed, current box is empty, and index is within the max range
+            if (e.key === "Backspace" && input.value.length === 0 && index > 0) {
+                allInputs[index - 1].focus();  // Move to the previous letter box
             }
         });
     });
@@ -45,7 +43,7 @@ function setCurrentWord() {
 document.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
         if (gameOver) {
-            console.log("Game over", topStreak)
+            console.log("Game over", topStreak);
             const rows = document.querySelectorAll(".word");
             // Go through each word from currentRow and letters in them, set them all to read only and unselectable
             for (let x = 0; x < rows.length; x++) {
@@ -72,17 +70,14 @@ document.addEventListener("keydown", (event) => {
 // check if elements are loaded BEFORE checking for rows; otherwise it will display as zero rows.
 document.addEventListener("DOMContentLoaded", () => {
     setCurrentWord()
-})
+});
 
 function submitGuess() {
     const rows = document.querySelectorAll(".word");  // Find all word classes from divs
-
-    console.log("There are", rows.length, "rows");
-
     const inputs = rows[currentRow].querySelectorAll(".letter");
     const letters = [];
 
-    let isValid = true;
+    let isValid = true;  // Assume word is valid until proven otherwise
 
     // Get each letter within each box
     for (let i = 0; i < inputs.length; i++) {
@@ -92,15 +87,15 @@ function submitGuess() {
         if (letter !== "" && LETTERS.has(letter)) {
             letters.push(letter);  // Add letter to our letters
         } else {
-            console.log("Invalid word! Not filled.")
-            isValid = false;  // Blank character
+            console.log("Invalid word! Not filled.");
+            isValid = false;  // Any blank character, invalid word
             break;
         }
     }
 
     const guess = letters.join("").toUpperCase();  // Construct our word from letters
 
-    console.log("User word is", guess)
+    console.log("User guessed word '", guess, "'");
 
     if (guess.length == 5 && !WORDS_5_LETTERS.has(guess)) {
         isValid = false;
@@ -130,7 +125,7 @@ function submitGuess() {
 
         if (allCorrect === inputs.length) {
             currentStreak += 1;
-            alert("YOU WON WITH A STREAK OF "+currentStreak);
+            
             // Go through each word from currentRow and letters in them, set them all to read only and unselectable
             for (let x = currentRow+1; x < rows.length; x++) {
                 const inputBoxes = rows[x].querySelectorAll(".letter");
@@ -142,11 +137,13 @@ function submitGuess() {
 
             currentRow = 0;  // Reset current row to zero - the new will start on the first row, not at the end of the previous row you won on
 
-            // focus back onto the first input box of the first row
+            // Focus back onto the first input box of the first row
 
             inputs[0].focus();
 
             gameOver = true;
+
+            alert("YOU WON WITH A STREAK OF "+currentStreak);
 
             return;
 
@@ -161,7 +158,9 @@ function submitGuess() {
     // If our current row number is beyond the amount of rows we have, then they lost
     if (currentRow >= rows.length) {
         currentStreak = 0;  // reset users current streak to zero
+        gameOver = true;  // Set game state to game over
         console.log("User ran out of guesses. Top streak:",topStreak);
+        alert("You lost! Your top streak was "+topStreak);
         // Will implement a visual message display here
         return;
     }
