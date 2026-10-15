@@ -44,9 +44,20 @@ function inputFocusNavigation() {
     });
 }
 
-// Detect whether the enter key is pressed
+function invalidateNonLetterInputs() {
+    const letterInputs = document.querySelectorAll('.letter');
+    
+    letterInputs.forEach(input => {  // Loop through each input box
+    
+    input.addEventListener('input', (e) => {  // When user enters into the letter input box
+        // Check for non letters and replace them with nothing (only allow letters to be inputted)
+        e.target.value = e.target.value.replace(/[^A-Za-z]/g, '');
+    });
+    });
+}
+
 document.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") {
+    if (event.key === "Enter") {  // Detect whether the enter key is pressed
         if (gameOver) {
             console.log("Game over", topStreak);
             const rows = document.querySelectorAll(".word");
@@ -72,13 +83,13 @@ document.addEventListener("keydown", (event) => {
     }
 });
 
-
 // check if elements are loaded BEFORE checking for rows; otherwise it will display as zero rows.
 document.addEventListener("DOMContentLoaded", () => {
     messageDiv = document.getElementById("message");
 
     setCurrentWord();
     inputFocusNavigation();
+    invalidateNonLetterInputs();
 });
 
 function submitGuess() {
@@ -127,9 +138,9 @@ function submitGuess() {
 
             if (userLetter === wordLetter) {  // if their word letter is in the same position as the chosen current word letter
                 allCorrect++;  // Track how man letters are correct
-                inputs[i].style.backgroundColor = "rgb(0, 220, 0)";  // Green background
+                inputs[i].style.backgroundColor = "rgb(0, 230, 0)";  // Green background
             } else if (currentWord.includes(userLetter)) {   // Word included but wrong position
-                inputs[i].style.backgroundColor = "rgb(220, 220, 0)";  // Yellow background
+                inputs[i].style.backgroundColor = "rgb(230, 230, 0)";  // Yellow background
             } else {  // not in word
                 inputs[i].style.backgroundColor = "rgb(255, 255, 255)";  // White background
             }
