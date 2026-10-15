@@ -11,30 +11,35 @@ let messageDiv = null;
 let gamesPlayed = 0;
 
 function setCurrentWord() {
+    messageDiv.textContent = "Streak: "+currentStreak+" | Best Streak: "+topStreak;
     const rows = document.querySelectorAll(".word");  // Find all word classes from divs
     
     if (rows.length === 6) {
         currentWord = [...WORDS_5_LETTERS][Math.floor(Math.random() * [...WORDS_5_LETTERS].length)];  // Randomly choose a word from 5 letter word list
         console.log("Chosen word is", currentWord);  // Output correct word for testing and validations
     }
+}
 
-    let lettersInWord = currentWord.split("");  // Split word into letters and store in an array
+function inputFocusNavigation() {
+    const rows = document.querySelectorAll(".word");  // Get all rows of words
 
-    const allInputs = document.querySelectorAll(".word input");  // Get all input boxes from the word divs
+    rows.forEach((row) => {  // Loop through each row of rows
+        const inputs = row.querySelectorAll(".letter");
 
-    allInputs.forEach((input, index) => {  // Loop through each letter box
-        input.addEventListener("input", () => {  // If a letter is typed into the letter input box
-            // If user typed a character and the index is still within the minimum range 
-            if (input.value.length >= 1 && index < allInputs.length - 1) {
-                allInputs[index + 1].focus();  // Move to the next letter box
-            }
-        });
+        inputs.forEach((input, index) => {  // Loop through each letter box
+            input.addEventListener("input", () => {  // If a letter is typed into the letter input box
+                // If user typed a character and the index is still within the minimum range 
+                if (input.value.length >= 1 && index < inputs.length - 1) {
+                    inputs[index + 1].focus();  // Move to the next letter box
+                }
+            });
 
-        input.addEventListener("keydown", (e) => {  // If a key is pressed
-            // If the backspace key is pressed, current box is empty, and index is within the max range
-            if (e.key === "Backspace" && input.value.length === 0 && index > 0) {
-                allInputs[index - 1].focus();  // Move to the previous letter box
-            }
+            input.addEventListener("keydown", (e) => {  // If a key is pressed
+                // If the backspace key is pressed, current box is empty, and index is within the max range
+                if (e.key === "Backspace" && input.value.length === 0 && index > 0) {
+                    inputs[index - 1].focus();  // Move to the previous letter box
+                }
+            });
         });
     });
 }
@@ -72,7 +77,8 @@ document.addEventListener("keydown", (event) => {
 document.addEventListener("DOMContentLoaded", () => {
     messageDiv = document.getElementById("message");
 
-    setCurrentWord()
+    setCurrentWord();
+    inputFocusNavigation();
 });
 
 function submitGuess() {
@@ -101,7 +107,7 @@ function submitGuess() {
 
     const guess = letters.join("").toUpperCase();  // Construct our word from letters
 
-    console.log("User guessed word '", guess, "'");
+    console.log("User guessed '"+guess+"'");
 
     if (guess.length == 5 && !WORDS_5_LETTERS.has(guess)) {
         isValid = false;
@@ -159,7 +165,8 @@ function submitGuess() {
 
     // If our current row number is beyond the amount of rows we have, then they lost
     if (currentRow >= rows.length) {
-        messageDiv.textContent = "You ran out of guesses! Streak: "+currentStreak+" | Best Streak: "+topStreak+"";
+        messageDiv.textContent = "You ran out of guesses! Streak: "+currentStreak+" | Best Streak: "+topStreak;
+        currentRow = 0;
         currentStreak = 0;  // Reset users current streak to zero
         gameOver = true;  // Set game state to game over
         console.log("User ran out of guesses. Best streak:",topStreak,"Current streak:",currentStreak);
