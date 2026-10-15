@@ -158,9 +158,9 @@ function submitGuess() {
         }
 
         currentRow++;
-    } else {
-        console.log("Word is not valid!", guess);
-        messageDiv.textContent = "Word "+guess+" is not a word in the dictionary!";
+    } else {  // Invalid word
+        messageDiv.textContent = "Word is invalid / not in the dictionary!";
+        console.log("Word '"+guess+"' is not valid!");
     }
 
     // If our current row number is beyond the amount of rows we have, then they lost
@@ -171,5 +171,9 @@ function submitGuess() {
         gameOver = true;  // Set game state to game over
         console.log("User ran out of guesses. Best streak:",topStreak,"Current streak:",currentStreak);
         return;
+    }
+
+    if (isValid) {
+        rows[currentRow].querySelector(".letter").focus();  // Focus on the first letter of the next row
     }
 }
