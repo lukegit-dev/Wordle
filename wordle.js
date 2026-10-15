@@ -7,11 +7,11 @@ let currentWord = [];
 let currentStreak = 0;
 let topStreak = 0;
 let gameOver = false;
+let messageDiv = null;
+let gamesPlayed = 0;
 
 function setCurrentWord() {
     const rows = document.querySelectorAll(".word");  // Find all word classes from divs
-
-    console.log("There are", rows.length, "rows");
     
     if (rows.length === 6) {
         currentWord = [...WORDS_5_LETTERS][Math.floor(Math.random() * [...WORDS_5_LETTERS].length)];  // Randomly choose a word from 5 letter word list
@@ -69,10 +69,14 @@ document.addEventListener("keydown", (event) => {
 
 // check if elements are loaded BEFORE checking for rows; otherwise it will display as zero rows.
 document.addEventListener("DOMContentLoaded", () => {
+    messageDiv = document.getElementById("message");
+
     setCurrentWord()
 });
 
 function submitGuess() {
+    messageDiv.textContent = "Streak: "+currentStreak+" | Best Streak: "+topStreak;
+
     const rows = document.querySelectorAll(".word");  // Find all word classes from divs
     const inputs = rows[currentRow].querySelectorAll(".letter");
     const letters = [];
@@ -87,6 +91,7 @@ function submitGuess() {
         if (letter !== "" && LETTERS.has(letter)) {
             letters.push(letter);  // Add letter to our letters
         } else {
+            messageDiv.textContent = "Word "+letters.join("")+" is not valid!";
             console.log("Invalid word! Not filled.");
             isValid = false;  // Any blank character, invalid word
             break;
@@ -135,33 +140,30 @@ function submitGuess() {
                 }
             }
 
+            messageDiv.textContent = "You won! The word is "+currentWord+". Streak: "+currentStreak+" | Best Streak: "+topStreak;
+
+            gameOver = true;  // Game is over, choose a different word
             currentRow = 0;  // Reset current row to zero - the new will start on the first row, not at the end of the previous row you won on
+            rows[0].querySelector(".letter").focus();  // Focus on the very start on game being reset
 
-            // Focus back onto the first input box of the first row
-
-            inputs[0].focus();
-
-            gameOver = true;
-
-            alert("YOU WON WITH A STREAK OF "+currentStreak);
+            console.log("User won! Word was "+currentWord+". Best streak:",topStreak,"Current streak:",currentStreak);
 
             return;
-
-            // Press enter to reset / restart the game
         }
 
         currentRow++;
     } else {
-        console.log("Word is not valid!", guess)
+        console.log("Word is not valid!", guess);
+        messageDiv.textContent = "Word "+guess+" is not a word in the dictionary!";
     }
 
     // If our current row number is beyond the amount of rows we have, then they lost
     if (currentRow >= rows.length) {
-        currentStreak = 0;  // reset users current streak to zero
+        messageDiv.textContent = "You ran out of guesses! Streak: "+currentStreak+" | Best Streak: "+topStreak;
+        currentStreak = 0;  // Reset users current streak to zero
         gameOver = true;  // Set game state to game over
-        console.log("User ran out of guesses. Top streak:",topStreak);
-        alert("You lost! Your top streak was "+topStreak);
-        // Will implement a visual message display here
+        console.log("User ran out of guesses. Best streak:",topStreak,"Current streak:",currentStreak);
+        rows[0].querySelector(".letter").focus();
         return;
     }
 }
