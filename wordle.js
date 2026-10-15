@@ -45,6 +45,7 @@ document.addEventListener("keydown", (event) => {
         if (gameOver) {
             console.log("Game over", topStreak);
             const rows = document.querySelectorAll(".word");
+            rows[0].querySelector(".letter").focus();  // Focus on the very start on game being reset
             // Go through each word from currentRow and letters in them, set them all to read only and unselectable
             for (let x = 0; x < rows.length; x++) {
                 const inputBoxes = rows[x].querySelectorAll(".letter");
@@ -140,11 +141,10 @@ function submitGuess() {
                 }
             }
 
-            messageDiv.textContent = "You won! The word is "+currentWord+". Streak: "+currentStreak+" | Best Streak: "+topStreak;
+            messageDiv.textContent = "You won! The word is "+currentWord+". Streak: "+currentStreak+" | Best Streak: "+topStreak+"";
 
             gameOver = true;  // Game is over, choose a different word
             currentRow = 0;  // Reset current row to zero - the new will start on the first row, not at the end of the previous row you won on
-            rows[0].querySelector(".letter").focus();  // Focus on the very start on game being reset
 
             console.log("User won! Word was "+currentWord+". Best streak:",topStreak,"Current streak:",currentStreak);
 
@@ -159,11 +159,10 @@ function submitGuess() {
 
     // If our current row number is beyond the amount of rows we have, then they lost
     if (currentRow >= rows.length) {
-        messageDiv.textContent = "You ran out of guesses! Streak: "+currentStreak+" | Best Streak: "+topStreak;
+        messageDiv.textContent = "You ran out of guesses! Streak: "+currentStreak+" | Best Streak: "+topStreak+"";
         currentStreak = 0;  // Reset users current streak to zero
         gameOver = true;  // Set game state to game over
         console.log("User ran out of guesses. Best streak:",topStreak,"Current streak:",currentStreak);
-        rows[0].querySelector(".letter").focus();
         return;
     }
 }
