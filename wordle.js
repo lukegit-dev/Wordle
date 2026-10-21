@@ -14,9 +14,97 @@ let lastLetter = "";
 function setselectedWord() {
     messageDiv.textContent = "Streak: "+currentStreak+" | Best Streak: "+topStreak;
     const rows = document.querySelectorAll(".word");  // Find all word classes from divs
+
+    let WORDS_5_LETTERS_LIST = null;
     
     if (rows.length === 6) {
-        selectedWord = [...WORDS_5_LETTERS][Math.floor(Math.random() * [...WORDS_5_LETTERS].length)];  // Randomly choose a word from 5 letter word list
+        switch (lastLetter) {
+            // Depending on the letter, select a random word from a word list starting with the last letter as the first
+            case "A":
+                WORDS_5_LETTERS_LIST = A_WORDS_5_LETTERS;
+                break;
+            case "B":
+                WORDS_5_LETTERS_LIST = B_WORDS_5_LETTERS;
+                break;
+            case "C":
+                WORDS_5_LETTERS_LIST = C_WORDS_5_LETTERS;
+                break;
+            case "D":
+                WORDS_5_LETTERS_LIST = D_WORDS_5_LETTERS;
+                break;
+            case "E":
+                WORDS_5_LETTERS_LIST = E_WORDS_5_LETTERS;
+                break;
+            case "F":
+                WORDS_5_LETTERS_LIST = F_WORDS_5_LETTERS;
+                break;
+            case "G":
+                WORDS_5_LETTERS_LIST = G_WORDS_5_LETTERS;
+                break;
+            case "H":
+                WORDS_5_LETTERS_LIST = H_WORDS_5_LETTERS;
+                break;
+            case "I":
+                WORDS_5_LETTERS_LIST = I_WORDS_5_LETTERS;
+                break;
+            case "J":
+                WORDS_5_LETTERS_LIST = J_WORDS_5_LETTERS;
+                break;
+            case "K":
+                WORDS_5_LETTERS_LIST = K_WORDS_5_LETTERS;
+                break;
+            case "L":
+                WORDS_5_LETTERS_LIST = L_WORDS_5_LETTERS;
+                break;
+            case "M":
+                WORDS_5_LETTERS_LIST = M_WORDS_5_LETTERS;
+                break;
+            case "N":
+                WORDS_5_LETTERS_LIST = N_WORDS_5_LETTERS;
+                break;
+            case "O":
+                WORDS_5_LETTERS_LIST = O_WORDS_5_LETTERS;
+                break;
+            case "P":
+                WORDS_5_LETTERS_LIST = P_WORDS_5_LETTERS;
+                break;
+            case "Q":
+                WORDS_5_LETTERS_LIST = Q_WORDS_5_LETTERS;
+                break;
+            case "R":
+                WORDS_5_LETTERS_LIST = R_WORDS_5_LETTERS;
+                break;
+            case "S":
+                WORDS_5_LETTERS_LIST = S_WORDS_5_LETTERS;
+                break;
+            case "T":
+                WORDS_5_LETTERS_LIST = T_WORDS_5_LETTERS;
+                break;
+            case "U":
+                WORDS_5_LETTERS_LIST = U_WORDS_5_LETTERS;
+                break;
+            case "V":
+                WORDS_5_LETTERS_LIST = V_WORDS_5_LETTERS;
+                break;
+            case "W":
+                WORDS_5_LETTERS_LIST = W_WORDS_5_LETTERS;
+                break;
+            case "X":
+                WORDS_5_LETTERS_LIST = X_WORDS_5_LETTERS;
+                break;
+            case "Y":
+                WORDS_5_LETTERS_LIST = Y_WORDS_5_LETTERS;
+                break;
+            case "Z":
+                WORDS_5_LETTERS_LIST = Z_WORDS_5_LETTERS;
+                break;
+            default:
+                WORDS_5_LETTERS_LIST = WORDS_5_LETTERS;
+                break;
+        }
+
+        selectedWord = [...WORDS_5_LETTERS_LIST][Math.floor(Math.random() * [...WORDS_5_LETTERS_LIST].length)];
+
         console.log("Chosen word is", selectedWord);  // Output correct word for testing and validations
     }
 }
@@ -150,8 +238,6 @@ function submitGuess() {
         if (allCorrect === inputs.length) {
             currentStreak += 1;
             lastLetter = selectedWord[4];
-
-            console.log(lastLetter);
             
             // Go through each word from currentRow and letters in them, set them all to read only and unselectable
             for (let x = currentRow+1; x < rows.length; x++) {
