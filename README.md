@@ -61,7 +61,12 @@ Here is the updated version using 5 letter words, but only inputting 4 (or less 
 <img src="images/Contains%20One%20Letter%20Bug.png" alt=""></img>
 <img src="images/Word%20After%20Words%20Bug.png" alt=""></img>
 # 5. Evaluation
-- Coming soon
+## 5.1. Meeting the Requirements
+- Overall success, how accurate it met requirements, strengths and weaknesses
+## 5.2. Reflection
+- Development process & individual performance, key decisions, challenges / problems, strengths and weaknesses, area for improvement
+## 5.3 Development Considerations
+- Prototypes vs main version
 ## To include
 - Used input boxes
 # 6. References
