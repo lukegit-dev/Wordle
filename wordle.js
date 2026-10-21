@@ -3,20 +3,21 @@
 const LETTERS = new Set("ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""));
 
 let currentRow = 0;  // A counter used to track which row we are on
-let currentWord = [];
+let selectedWord = [];
 let currentStreak = 0;
 let topStreak = 0;
 let gameOver = false;
 let messageDiv = null;
 let gamesPlayed = 0;
+let lastLetter = "";
 
-function setCurrentWord() {
+function setselectedWord() {
     messageDiv.textContent = "Streak: "+currentStreak+" | Best Streak: "+topStreak;
     const rows = document.querySelectorAll(".word");  // Find all word classes from divs
     
     if (rows.length === 6) {
-        currentWord = [...WORDS_5_LETTERS][Math.floor(Math.random() * [...WORDS_5_LETTERS].length)];  // Randomly choose a word from 5 letter word list
-        console.log("Chosen word is", currentWord);  // Output correct word for testing and validations
+        selectedWord = [...WORDS_5_LETTERS][Math.floor(Math.random() * [...WORDS_5_LETTERS].length)];  // Randomly choose a word from 5 letter word list
+        console.log("Chosen word is", selectedWord);  // Output correct word for testing and validations
     }
 }
 
@@ -74,7 +75,7 @@ document.addEventListener("keydown", (event) => {
                 }
             }
 
-            setCurrentWord();
+            setselectedWord();
 
             gameOver = false;
         } else {
@@ -87,7 +88,7 @@ document.addEventListener("keydown", (event) => {
 document.addEventListener("DOMContentLoaded", () => {
     messageDiv = document.getElementById("message");
 
-    setCurrentWord();
+    setselectedWord();
     inputFocusNavigation();
     invalidateNonLetterInputs();
 });
@@ -130,7 +131,7 @@ function submitGuess() {
         // Loop through each letter
         for (let i = 0; i < inputs.length; i++) {
             const userLetter = inputs[i].value.toUpperCase();
-            const wordLetter = currentWord[i];
+            const wordLetter = selectedWord[i];
             
             // Add attribute to input; set to read only and unselectable;
             inputs[i].setAttribute("readonly", true);
@@ -139,7 +140,7 @@ function submitGuess() {
             if (userLetter === wordLetter) {  // if their word letter is in the same position as the chosen current word letter
                 allCorrect++;  // Track how man letters are correct
                 inputs[i].style.backgroundColor = "rgb(0, 230, 0)";  // Green background
-            } else if (currentWord.includes(userLetter)) {   // Word included but wrong position
+            } else if (selectedWord.includes(userLetter)) {   // Word included but wrong position
                 inputs[i].style.backgroundColor = "rgb(230, 230, 0)";  // Yellow background
             } else {  // not in word
                 inputs[i].style.backgroundColor = "rgb(255, 255, 255)";  // White background
@@ -148,6 +149,9 @@ function submitGuess() {
 
         if (allCorrect === inputs.length) {
             currentStreak += 1;
+            lastLetter = selectedWord[4];
+
+            console.log(lastLetter);
             
             // Go through each word from currentRow and letters in them, set them all to read only and unselectable
             for (let x = currentRow+1; x < rows.length; x++) {
@@ -158,12 +162,12 @@ function submitGuess() {
                 }
             }
 
-            messageDiv.textContent = "You won! The word is "+currentWord+". Streak: "+currentStreak+" | Best Streak: "+topStreak+"";
+            messageDiv.textContent = "You won! The word is "+selectedWord+". Streak: "+currentStreak+" | Best Streak: "+topStreak+"";
 
             gameOver = true;  // Game is over, choose a different word
             currentRow = 0;  // Reset current row to zero - the new will start on the first row, not at the end of the previous row you won on
 
-            console.log("User won! Word was "+currentWord+". Best streak:",topStreak,"Current streak:",currentStreak);
+            console.log("User won! Word was "+selectedWord+". Best streak:",topStreak,"Current streak:",currentStreak);
 
             return;
         }
