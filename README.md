@@ -33,11 +33,33 @@ Puzzle players of any age who enjoy a challenge / brain teasers would be the pri
 - Performance - Page should load fast. Choosing and checking word against word list should be under ~2 seconds (uptrends.com, 2025).
 - Visual Design - Simple design, focused centre-aligned input boxes for each guess. Clear user feedback (green, yellow, and no colour change guesses, win / loss message) and instructions on how to play.
 # 2. Design
-- Coming soon
+## 2.1 Initial Design
+The initial design will follow similar style to the official wordle by the New york times (2021) as described in my Main Concept title.
+The main design will be built for desktop (see screenshot below).
+<img src="images/main%20design.png" alt="Main Wordle Design"></img>
 # 3. Development
 - Coming soon
 # 4. Testing
-- Coming soon
+Numerous bugs and tests were performed during the development of ScrambL. Some tests were performed on older versions (6 letter wordle) but have since been accepted as fixes that can be applied to 5 letter words.
+
+The first test was  previous 6 letter version (since been reverted to 5 due to scope creep)
+
+First test was to check if the word exists in the word list, and the minimum number of letters to accept is dependant on how many input boxes there are in the current row.
+
+<img src="images/Prototype%20Validity%20Word%20Test%203.png" alt="Validity test of word - check if 6 letter input in 6 input boxes but word that does not exist is correct"></img>
+
+The second test below shows that only 6 letter words are accepted, any other length is rejected.
+
+<img src="images/Prototype%20Validity%20Word%20Test%202.png" alt="Validity test of word - check if any word that does not fit in 6 letter"></img>
+
+Here is the updated version using 5 letter words, but only inputting 4 (or less for that matter) with the output log.
+
+<img src="images/Validity%20Word%20Test%202%20-%205%20letter.png" alt="Validity test of word - check if a real word exists that is 6 letters long and is accepted"></img>
+
+<img src="images/Prototype%20Validity%20Word%20Test%201.png" alt="Validity test of word - check if a real word exists that is 6 letters long and is accepted"></img>
+
+<img src="images/Contains%20One%20Letter%20Bug.png" alt=""></img>
+<img src="images/Word%20After%20Words%20Bug.png" alt=""></img>
 # 5. Evaluation
 - Coming soon
 ## To include
@@ -46,6 +68,7 @@ Puzzle players of any age who enjoy a challenge / brain teasers would be the pri
 - Benveniste, Alexis, and Jackie Frere. “A Collection of the Best Wordle Tips and Tricks.” The New York Times, 10 Feb. 2022, https://www.nytimes.com/2022/02/10/crosswords/best-wordle-tips.html. Accessed 23 Sept. 2026.
 - developer.mozilla.org. “HTML input element” MDN Web Docs, 10 Apr. 2025, https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input. Accessed 23 Sept. 2026..
 - “HTML Input Tag.” www.w3schools.com, 2024, https://www.w3schools.com/tags/tag_input.asp. Accessed 24 Sept. 2026.
+- New york times (2021). Wordle - a daily word game. www.nytimes.com. Available at: https://www.nytimes.com/games/wordle/index.html [Accessed 21 Oct. 2026].
 - Stack Overflow (2017). What is the JavaScript version of sleep()? Stack Overflow. Available at: https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep [Accessed 7 Oct. 2026].A solution is explained for this question
 - “Word List By Length” 20 Jul. 2017, https://github.com/MagicOctopusUrn/wordListsByLength. Accessed 25 Sept. 2026.
 - “W3Schools Online HTML Editor” www.w3schools.com, 2024, https://www.w3schools.com/html/tryit.asp?filename=tryhtml_styles_background-color. Accessed 25 Sept. 2026.
