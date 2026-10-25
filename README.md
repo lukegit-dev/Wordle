@@ -18,7 +18,7 @@ Players are presented with a string of characters and attempt to find the hidden
 2. If the player guesses correctly, a new word is created from the last letter of the correct word.
 3. The user continuously guesses until they get a word wrong. Their streak is recorded.
 ## 1.3 Target Audience
-Puzzle players of any age who enjoy a challenge / brain teasers would be the primary audience for this game.
+Puzzle players of any age who enjoy a challenge / brain teasers would be the primary audience for this game, however some words could be difficult to guess.
 ### 1.3.1 User Profile Example
 - Discuss needs and expectations
 ## 1.4 Requirements
@@ -74,7 +74,11 @@ Here is the updated version using 5 letter words, but only inputting 4 (or less 
 # 5. Evaluation
 ## 5.1. Meeting the Requirements
 ### Overall Success
-Overall, this game has accurately met its requirements by re-creating wordle with a different spin on it. Feedback is given visually as a text heading at the top.
+Overall, this game has accurately met its requirements by re-creating wordle with a different spin on it. Feedback is given visually as a text heading at the top so the user knows when the game is won, lost, or if they have an incorrect word (not in word list). Extra feature was added to pick the last letter of the guessed word and use it at the start of the new chosen word for the user to guess.
+### Strengths
+- Visual feedback - Letter colours after guessing a word is shown, letting the user know if a letter is in the correct position, not correct but wrong place, and not in the word. Message feedback is given if the word guessed is incorrect, and if you won or lost the game.
+- Simple design - This puts the focus on guessing the word. A darker background allows the user to focus more on the foreground (word guessing).
+- 
 - Overall success, how accurate it met requirements, strengths and weaknesses
 ## 5.2. Reflection
 - Development process & individual performance, key decisions, challenges / problems, strengths and weaknesses, area for improvement (mobile support)
