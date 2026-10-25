@@ -31,13 +31,18 @@ Puzzle players of any age who enjoy a challenge / brain teasers would be the pri
 - Player should be able to start a new game (pressing enter).
 
 ### 1.4.2 Non-functional Requirements
-- Usability:
+#### 1.4.2.1 Usability
     - Simple to learn and play.
     - A streak score is updated and shown visually to the user.
     - The best streak is kept even when game is lost
     - After guessing correctly, a new word is chosen starting with the last letter of the previously guessed word
-- Accessibility - Good use of colour contrast and dyslexia friendly fonts.
-- Performance - Fast page loading of ~2 seconds (uptrends.com, 2025). Fast word checking. 
+#### 1.4.2.2 Accessibility
+- Good use of colour contrast (background to foreground).
+- Dyslexia friendly fonts.
+- Larger boxes and text inputs to assist people who have bad eyesight.
+#### 1.4.2.3 Performance
+- Fast page loading of ~2 seconds (uptrends.com, 2025).
+- Fast word checking.
 #### 1.4.2.1 Visual Design
 - Simple, centre focused centre-aligned input boxes for each guess.
 - Clear user feedback (green, yellow, and no colour change guesses, win / loss / incorrect word messages) and instructions on how to play.
@@ -92,9 +97,14 @@ Overall, this game has accurately met its requirements by re-creating wordle wit
     - Specific letters could be very rare and not picked, like ending with Z or X
 - Currently there is no way to reset a word without losing your streak
 ## 5.2. Reflection
+### 5.2.1 Development Process, decisions, challenges and problems faced
+Building ScrambL incrementally allows me to find bugs and log my development process better. Developing this, I first created a Python mockup version which worked only in console to prototype my main solution, as I was more familiar with this programming language, figuring out how I would go about doing this for JavaScript. Following this, I followed through with reading up on JavaScript using varying sources such as freeCodeCamp, stackoverflow, and w3schools.
 
+When prototyping the main idea, I created the letter boxes first; 6 of them, as my idea was to initially have 6, and guessing each word would reduce it lower to 5 letter word, then 4, and 3. I reverted this change as my idea was too difficult to implement and due to the time constraint I had for this project.
+
+Through learning about event handling (when a user enters letters into each box), and how to validate the inputs, I collected a large 5 letter word list.
 - Development process & individual performance, key decisions, challenges / problems, strengths and weaknesses, area for improvement (mobile support)
-## 5.3 Development Considerations
+## 5.3. Development Considerations
 - Prototypes vs main version
 ## To include
 - Used input boxes
