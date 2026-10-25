@@ -14,6 +14,7 @@ input {  /* Wordle letters */
     background-color: rgb(180, 180, 180);
     border: 4px solid rgb(0, 0, 0);
     align-self: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 input:focus {  /* Which wordle letter input box is currently selected */
@@ -24,12 +25,12 @@ h1 {
     display: flex;
     justify-content: center;
     color: white;
-    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 h2 {
     display: flex;
     justify-content: center;
     color: white;
-    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
