@@ -29,15 +29,20 @@ Puzzle players of any age who enjoy a challenge / brain teasers would be the pri
 - Letter colour feedback once word is guessed (explained in main concept).
 - Limited to a set amount of guesses.
 - Player should be able to start a new game (pressing enter).
-- A streak score is updated and shown visually to the user. The best streak is kept even when game is lost.
-- After guessing correctly, a new word is chosen starting with the last letter of the previously guessed word
-- The game should load quickly, and guess checking should be quick too.
-- Visually, when selecting a letter box, that box should be highlighted to show the user where they are typing. The background should not be distracting (such as using bright colours) - The focus should be on guessing the word, so a darker background and brighter foreground should be used
+
 ### 1.4.2 Non-functional Requirements
-- Usability - Simple to learn and play.
-- Accessibility - Good use of colour contrast.
-- Performance - Page should load fast. Choosing and checking word against word list should be under ~2 seconds (uptrends.com, 2025).
-- Visual Design - Simple design, focused centre-aligned input boxes for each guess. Clear user feedback (green, yellow, and no colour change guesses, win / loss message) and instructions on how to play.
+- Usability:
+    - Simple to learn and play.
+    - A streak score is updated and shown visually to the user.
+    - The best streak is kept even when game is lost
+    - After guessing correctly, a new word is chosen starting with the last letter of the previously guessed word
+- Accessibility - Good use of colour contrast and dyslexia friendly fonts.
+- Performance - Fast page loading of ~2 seconds (uptrends.com, 2025). Fast word checking. 
+#### 1.4.2.1 Visual Design
+- Simple, centre focused centre-aligned input boxes for each guess.
+- Clear user feedback (green, yellow, and no colour change guesses, win / loss / incorrect word messages) and instructions on how to play.
+- Letter box selection - Current box should be highlighted to show the user where they are typing.
+- No bright coloured background as it could be distracting. The focus should be on guessing the word, so a darker background and brighter foreground should be used to emphasise this.
 # 2. Design
 ## 2.1 Initial Design
 The initial design will follow similar style to the official wordle by the New york times (2021) as described in my Main Concept title.
