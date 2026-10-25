@@ -239,8 +239,8 @@ function submitGuess() {
         }
 
         if (allCorrect === inputs.length) {  // User won
-            currentStreak += 1;
-            topStreak += 1;
+            currentStreak++;
+            if (currentStreak >= topStreak) topStreak++;
             lastLetter = selectedWord[4];
             
             // Go through each word from currentRow and letters in them, set them all to read only and unselectable
