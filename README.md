@@ -78,8 +78,12 @@ Overall, this game has accurately met its requirements by re-creating wordle wit
 ### Strengths
 - Visual feedback - Letter colours after guessing a word is shown, letting the user know if a letter is in the correct position, not correct but wrong place, and not in the word. Message feedback is given if the word guessed is incorrect, and if you won or lost the game.
 - Simple design - This puts the focus on guessing the word. A darker background allows the user to focus more on the foreground (word guessing).
-- 
-- Overall success, how accurate it met requirements, strengths and weaknesses
+- Larger letter boxes and dyslexia friendly fonts gives a wider audience range a chance to participate.
+### Weaknesses
+- Lack of word selection - Choosing the previous words' last letter to start off the next word limits word choice. For example:
+    - Many words can end with letter S, which may be a common starting letter theme.
+    - Specific letters could be very rare and not picked, like ending with Z or X
+- Currently there is no way to reset a word without losing your streak
 ## 5.2. Reflection
 - Development process & individual performance, key decisions, challenges / problems, strengths and weaknesses, area for improvement (mobile support)
 ## 5.3 Development Considerations
