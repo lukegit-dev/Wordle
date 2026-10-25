@@ -19,14 +19,20 @@ Players are presented with a string of characters and attempt to find the hidden
 3. The user continuously guesses until they get a word wrong. Their streak is recorded.
 ## 1.3 Target Audience
 Puzzle players of any age who enjoy a challenge / brain teasers would be the primary audience for this game.
+### 1.3.1 User Profile Example
+- Discuss needs and expectations
 ## 1.4 Requirements
 ### 1.4.1 Functional Requirements
 - 5 by 6 grid of letter input boxes.
 - Single letter uppercase acceptance for each box.
-- Word validation (word must exist).
+- Word validation (a guess word must exist).
 - Letter colour feedback once word is guessed (explained in main concept).
 - Limited to a set amount of guesses.
-- Player should be able to start a new game.
+- Player should be able to start a new game (pressing enter).
+- A streak score is updated and shown visually to the user. The best streak is kept even when game is lost.
+- After guessing correctly, a new word is chosen starting with the last letter of the previously guessed word
+- The game should load quickly, and guess checking should be quick too.
+- Visually, when selecting a letter box, that box should be highlighted to show the user where they are typing. The background should not be distracting (such as using bright colours) - The focus should be on guessing the word, so a darker background and brighter foreground should be used
 ### 1.4.2 Non-functional Requirements
 - Usability - Simple to learn and play.
 - Accessibility - Good use of colour contrast.
@@ -62,9 +68,11 @@ Here is the updated version using 5 letter words, but only inputting 4 (or less 
 <img src="images/Word%20After%20Words%20Bug.png" alt=""></img>
 # 5. Evaluation
 ## 5.1. Meeting the Requirements
+### Overall Success
+Overall, this game has accurately met its requirements by re-creating wordle with a different spin on it. Feedback is given visually as a text heading at the top.
 - Overall success, how accurate it met requirements, strengths and weaknesses
 ## 5.2. Reflection
-- Development process & individual performance, key decisions, challenges / problems, strengths and weaknesses, area for improvement
+- Development process & individual performance, key decisions, challenges / problems, strengths and weaknesses, area for improvement (mobile support)
 ## 5.3 Development Considerations
 - Prototypes vs main version
 ## To include
@@ -72,6 +80,7 @@ Here is the updated version using 5 letter words, but only inputting 4 (or less 
 # 6. References
 - Benveniste, Alexis, and Jackie Frere. “A Collection of the Best Wordle Tips and Tricks.” The New York Times, 10 Feb. 2022, https://www.nytimes.com/2022/02/10/crosswords/best-wordle-tips.html. Accessed 23 Sept. 2026.
 - developer.mozilla.org. “HTML input element” MDN Web Docs, 10 Apr. 2025, https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input. Accessed 23 Sept. 2026..
+- figma.com (2023). Blue-gray color: Hex code, palettes & meaning. Figma. Available at: https://www.figma.com/colors/blue-gray/ [Accessed 25 Oct. 2026].
 - “HTML Input Tag.” www.w3schools.com, 2024, https://www.w3schools.com/tags/tag_input.asp. Accessed 24 Sept. 2026.
 - New york times (2021). Wordle - a daily word game. www.nytimes.com. Available at: https://www.nytimes.com/games/wordle/index.html [Accessed 21 Oct. 2026].
 - Stack Overflow (2017). What is the JavaScript version of sleep()? Stack Overflow. Available at: https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep [Accessed 7 Oct. 2026].
