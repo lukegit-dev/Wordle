@@ -2,7 +2,7 @@
 Players are presented with a string of characters and attempt to find the hidden word or number sequence. Players will be informed when they find a correct character and whether it is in the correct position.
 # Table of Contents
 - Coming soon
-# 1. Project Overview
+# 1 Project Overview
 ## 1.1 Main Concept
 1. Guess a random hidden 5 letter word with each guess being a real 5 letter word.
 2. Each letter you guess is assigned to the following colour:
@@ -48,14 +48,18 @@ Puzzle players of any age who enjoy a challenge / brain teasers would be the pri
 - Clear user feedback (green, yellow, and no colour change guesses, win / loss / incorrect word messages) and instructions on how to play.
 - Letter box selection - Current box should be highlighted to show the user where they are typing.
 - No bright coloured background as it could be distracting. The focus should be on guessing the word, so a darker background and brighter foreground should be used to emphasise this.
-# 2. Design
+# 2 Design
 ## 2.1 Initial Design
-The initial design will follow similar style to the official wordle by the New york times (2021) as described in my Main Concept title.
-The main design will be built for desktop (see screenshot below).
+The initial design will follow similar style to the official wordle by the New york times (2021) as described in my Main Concept title, where you have 6 letters and must guess the word in 6 tries.
+
+The main design will be built for desktop:
+
 <img src="images/main%20design.png" alt="Main Wordle Design"></img>
-# 3. Development
-- Coming soon
-# 4. Testing
+## 2.2 Finalized Design
+The finished design with streaks working, example guessin with feedback:
+
+<img src="images/Finalized.png" alt="A bug after guessing the correct word, guessing was never reset to the first row, nor was the focus box."></img>
+# 3 Development & Testing
 Numerous bugs and tests were performed during the development of ScrambL. Some tests were performed on older versions (6 letter wordle) but have since been accepted as fixes that can be applied to 5 letter words.
 
 The first test was previously 6 letters long and had a different idea. This has since been reverted to 5 due to scope creep.
@@ -83,32 +87,32 @@ A gameplay example, but the word "AHEAD" only contains one E, yet guessing "SHEE
 A bug after guessing the correct word, guessing was never reset to the first row, nor was the focus box.
 
 <img src="images/Word%20After%20Words%20Bug.png" alt="A bug after guessing the correct word, guessing was never reset to the first row, nor was the focus box."></img>
-# 5. Evaluation
-## 5.1. Meeting the Requirements
-### 5.1.1 Overall Success
+# 4 Evaluation
+## 4.1 Meeting the Requirements
+### 4.1.1 Overall Success
 Overall, this game has accurately met its requirements by re-creating wordle with a different spin on it. Feedback is given visually as a text heading at the top so the user knows when the game is won, lost, or if they have an incorrect word (not in word list). Extra feature was added to pick the last letter of the guessed word and use it at the start of the new chosen word for the user to guess.
-### 5.1.2 Strengths
+### 4.1.2 Strengths
 - Visual feedback - Letter colours after guessing a word are shown, letting the user know if a letter is in the correct position, not correct but wrong place, and not in the word. Message feedback is given if the word guessed is incorrect, and if you won or lost the game.
 - Simple design - This puts the focus on guessing the word. A darker background allows the user to focus more on the foreground (word guessing).
 - Larger letter boxes and dyslexia friendly fonts gives a wider audience range a chance to participate.
-### 5.1.3 Weaknesses
+### 4.1.3 Weaknesses
 - Lack of word selection - Choosing the previous words' last letter to start off the next word limits word choice. For example:
     - Many words can end with letter S, which may be a common starting letter theme.
     - Specific letters could be very rare and not picked, like ending with Z or X
 - Currently there is no way to reset a word without losing your streak
-## 5.2. Reflection
-### 5.2.1 Development Process, decisions, challenges and problems faced
+## 4.2 Reflection
+### 4.2.1 Development Process, decisions, challenges and problems faced
 Building ScrambL incrementally allows me to find bugs and log my development process better. Developing this, I first created a Python mockup version which worked only in console to prototype my main solution, as I was more familiar with this programming language, figuring out how I would go about doing this for JavaScript. Following this, I followed through with reading up on JavaScript using varying sources such as freeCodeCamp, stackoverflow, and w3schools.
 
 When prototyping the main idea, I created the letter boxes first; 6 of them, as my idea was to initially have 6, and guessing each word would reduce it lower to 5 letter word, then 4, and 3. I reverted this change as my idea was too difficult to implement and due to the time constraint I had for this project.
 
 Through learning about event handling (when a user enters letters into each box), and how to validate the inputs, I collected a large 5 letter word list.
-- Development process & individual performance, key decisions, challenges / problems, strengths and weaknesses, area for improvement (mobile support)
-## 5.3. Development Considerations
+- Development process & individual performance, key decisions, challenges / problems, strengths and weaknesses, area for improvement (mobile UI support, win/losses and % statistics)
+## 4.3 Development Considerations
 - Prototypes vs main version
-## To include
+### To include
 - Used input boxes
-# 6. References
+# 5. References
 - Benveniste, Alexis, and Jackie Frere. “A Collection of the Best Wordle Tips and Tricks.” The New York Times, 10 Feb. 2022, https://www.nytimes.com/2022/02/10/crosswords/best-wordle-tips.html. Accessed 23 Sept. 2026.
 - developer.mozilla.org. “HTML input element” MDN Web Docs, 10 Apr. 2025, https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input. Accessed 23 Sept. 2026.
 - figma.com (2023). Blue-gray color: Hex code, palettes & meaning. Figma. Available at: https://www.figma.com/colors/blue-gray/ [Accessed 25 Oct. 2026].
