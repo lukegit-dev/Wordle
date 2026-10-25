@@ -67,24 +67,32 @@ Here is the updated version using 5 letter words, but only inputting 4 (or less 
 
 <img src="images/Validity%20Word%20Test%202%20-%205%20letter.png" alt="Validity test of word - check if a real word exists that is 6 letters long and is accepted"></img>
 
+Checking word validity
+
 <img src="images/Prototype%20Validity%20Word%20Test%201.png" alt="Validity test of word - check if a real word exists that is 6 letters long and is accepted"></img>
 
-<img src="images/Contains%20One%20Letter%20Bug.png" alt=""></img>
-<img src="images/Word%20After%20Words%20Bug.png" alt=""></img>
+A gameplay example, but the word "AHEAD" only contains one E, yet guessing "SHEET" tells us there is another E within the word. This is because it just checks whether its included in the word, not also how many times.
+
+<img src="images/Contains%20One%20Letter%20Bug.png" alt="Gameplay example with double letter bug"></img>
+
+A bug after guessing the correct word, guessing was never reset to the first row, nor was the focus box.
+
+<img src="images/Word%20After%20Words%20Bug.png" alt="A bug after guessing the correct word, guessing was never reset to the first row, nor was the focus box."></img>
 # 5. Evaluation
 ## 5.1. Meeting the Requirements
-### Overall Success
+### 5.1.1 Overall Success
 Overall, this game has accurately met its requirements by re-creating wordle with a different spin on it. Feedback is given visually as a text heading at the top so the user knows when the game is won, lost, or if they have an incorrect word (not in word list). Extra feature was added to pick the last letter of the guessed word and use it at the start of the new chosen word for the user to guess.
-### Strengths
+### 5.1.2 Strengths
 - Visual feedback - Letter colours after guessing a word is shown, letting the user know if a letter is in the correct position, not correct but wrong place, and not in the word. Message feedback is given if the word guessed is incorrect, and if you won or lost the game.
 - Simple design - This puts the focus on guessing the word. A darker background allows the user to focus more on the foreground (word guessing).
 - Larger letter boxes and dyslexia friendly fonts gives a wider audience range a chance to participate.
-### Weaknesses
+### 5.1.3 Weaknesses
 - Lack of word selection - Choosing the previous words' last letter to start off the next word limits word choice. For example:
     - Many words can end with letter S, which may be a common starting letter theme.
     - Specific letters could be very rare and not picked, like ending with Z or X
 - Currently there is no way to reset a word without losing your streak
 ## 5.2. Reflection
+
 - Development process & individual performance, key decisions, challenges / problems, strengths and weaknesses, area for improvement (mobile support)
 ## 5.3 Development Considerations
 - Prototypes vs main version
