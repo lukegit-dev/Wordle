@@ -1,4 +1,4 @@
-
+alert("Welcome to ScrambL!\n\nTo guess a word, type it out and press enter. If you guess a word correctly, the next word will start with the last letter of the previous word.\n\nGood luck!")
 // Constants that we need throughout the program
 const LETTERS = new Set("ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""));
 
@@ -112,8 +112,11 @@ function setselectedWord() {
 function inputFocusNavigation() {
     const rows = document.querySelectorAll(".word");  // Get all rows of words
 
+    rows[0].querySelectorAll(".letter")[0].focus();
+
     rows.forEach((row) => {  // Loop through each row of rows
         const inputs = row.querySelectorAll(".letter");
+        
 
         inputs.forEach((input, index) => {  // Loop through each letter box
             input.addEventListener("input", () => {  // If a letter is typed into the letter input box
@@ -248,7 +251,7 @@ function submitGuess() {
                 }
             }
 
-            messageDiv.textContent = "You won! The word is "+selectedWord+". Streak: "+currentStreak+" | Best Streak: "+topStreak+"";
+            messageDiv.textContent = "You won! Streak: "+currentStreak+" | Best Streak: "+topStreak;
 
             gameOver = true;  // Game is over, choose a different word
             currentRow = 0;  // Reset current row to zero - the new will start on the first row, not at the end of the previous row you won on
