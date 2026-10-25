@@ -19,3 +19,17 @@ input {  /* Wordle letters */
 input:focus {  /* Which wordle letter input box is currently selected */
     border: 6px solid rgb(0, 0, 100);
 }
+
+h1 {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family: sans-serif;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family: sans-serif;
+}
