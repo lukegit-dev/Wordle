@@ -1,4 +1,4 @@
-alert("Welcome to ScrambL!\n\nTo guess a word, type it out and press enter. If you guess a word correctly, the next word will start with the last letter of the previous word.\n\nGood luck!")
+alert("Welcome to ScrambL!\n\nTo guess a word, type it out and press enter.\n\nYellow letter means its in the word but in the wrong place. White letter means its not in the word. Green letter means you have it in the right place.\n\nIf you guess a word correctly, the next word will start with the last letter of the previous word.\n\nGood luck!")
 // Constants that we need throughout the program
 const LETTERS = new Set("ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""));
 
