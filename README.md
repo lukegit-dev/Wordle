@@ -53,11 +53,32 @@ Charlie is 60 years old. In his free time, he enjoys to read the local newspaper
 #### 1.4.2.3 Performance
 - Fast page loading of ~2 seconds (uptrends.com, 2025).
 - Fast word checking.
-#### 1.4.2.1 Visual Design
+#### 1.4.2.4 Visual Design
 - Simple, centre focused centre-aligned input boxes for each guess.
 - Clear user feedback (green, yellow, and no colour change guesses, win / loss / incorrect word messages) and instructions on how to play.
 - Letter box selection - Current box should be highlighted to show the user where they are typing.
 - No bright coloured background as it could be distracting. The focus should be on guessing the word, so a darker background and brighter foreground should be used to emphasise this.
+### 1.4.3 Potential Risks
+Randomness may not feel as random. Starting with the last letter of the last correct word yields narrowed next words, and may lead to repetition if the 5 letter word list is not big enough.
+#### 1.4.3.1 Challenges
+- Validating a word will need many branches containing all letters of the alphabet, which can lead to mistakes if not done properly.
+- Difficulty of guessing a word may be harder. If a word ends with Y, more rare 54 letter words could be chosen as the next word, making it more challenging to guess.
+- Filtering out profanities and other rude or coarse words may be tedious to do.
+- Real words that are not in the dictionary may confuse the user.
+#### 1.4.3.2 Scope
+In scope:
+    - Core guessing functionality and feedback system given to the user.
+    - Validating a word exists in the word list.
+    - An aesthetically pleasing User Interface.
+Out of scope:
+    - A proper data saving system that saves statistics for when you revisit the site.
+    - Multiplayer system to compare you against how others have done.
+    - Custom word list category
+#### 1.4.3.2 Dependencies
+- Creating enough words for the word list for the user to guess and word to be chosen in.
+- A random word picked from the word list that is 5 letters long.
+- Testing data for validity testing.
+- Telling the user the rules of the game and how to play.
 # 2 Design
 ## 2.1 Initial Design
 The initial design will follow similar style to the official wordle by the New york times (2021) as described in my Main Concept title, where you have 6 letters and must guess the word in 6 tries.
