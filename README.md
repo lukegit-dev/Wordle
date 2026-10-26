@@ -226,16 +226,18 @@ Using an iterative development process using the agile model to provide me with 
 - Focus was sometimes higher on the smaller things such as style and background colour than the main development.
 - Sometimes testing was not thorough enough, and a retest was needed with new solutions put in place, and comitted to GitHub.
 ### 4.3.3 Current and Emerging Technologies
-- Python was used as the prototype allowing for more experimentation without worrying about the design.
 - Visual Studio Code:
     - HTML & CSS used for designing how ScrambL looks
     - JavaScript used for game logic and making HTML interactable (input boxes, custom messages)
+
+Using HTML, CSS, and JavaScript was used as they all accessible and sufficiently appropriate for this small game.
+#### 4.3.3.1 Justification
+Developing a prototype and creating tests were useful when developing the games logic, as it provided insight into what went wrong and how it was fixed, while keeping a log on my fixes so completing the test again would not need to be done.
+### 4.3.4 Development Tools and Design Methods
+- Python was used as the prototype allowing for more experimentation without worrying about the design.
 - GitHub & GitHub Desktop used for version control, updating changes, and storing the codebase.
 - Developer Tools - F12 gives access to the JavaScript console, used to debug code with output logs.
 - Pseudocode - Planned game logic with a more simple design
-#### 4.3.3.1 Justification
-Developing a prototype and creating tests were useful when developing the games logic, as it provided insight into what went wrong and how it was fixed, while keeping a log on my fixes so completing the test again would not need to be done. 
-
 # 5. References
 - Benveniste, Alexis, and Jackie Frere. “A Collection of the Best Wordle Tips and Tricks.” The New York Times, 10 Feb. 2022, https://www.nytimes.com/2022/02/10/crosswords/best-wordle-tips.html. Accessed 23 Sept. 2026.
 - developer.mozilla.org. “HTML input element” MDN Web Docs, 10 Apr. 2025, https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input. Accessed 23 Sept. 2026.
