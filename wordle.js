@@ -19,10 +19,7 @@ function setselectedWord() {
     
     if (rows.length === 6) {
         switch (lastLetter) {
-            // Depending on the letter, select a random word from a word list starting with the last letter as the first 
-            // Instead of cycling through the word list to find letters that start with the last letter of the previously guessed word
-            // I split the words into alphabetical order and use a switch statement to determine which word list to chose from that
-            // matches lastLetter
+            // Depending on the letter, select a random word from a word list starting with the last letter as the first
             case "A":
                 WORDS_5_LETTERS_LIST = A_WORDS_5_LETTERS;
                 break;
@@ -274,7 +271,6 @@ function submitGuess() {
     // If our current row number is beyond the amount of rows we have, then they lost
     if (currentRow >= rows.length) {
         messageDiv.textContent = "You ran out of guesses! The word was "+selectedWord+". Streak: "+currentStreak+" | Best Streak: "+topStreak;
-        lastLetter = "" // Choose a different word since the user could not guess it
         currentRow = 0;
         currentStreak = 0;  // Reset users current streak to zero
         gameOver = true;  // Set game state to game over
