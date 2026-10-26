@@ -1,5 +1,5 @@
 # ScrambL - A descendant of Wordle
-Players are presented with a string of characters and attempt to find the hidden word sequence. Players will be informed when they find a correct character and whether it is in the correct position.
+Players are presented with a string of characters and attempt to find the hidden word sequence. Players will be informed when they find a letter used in the word with the correct position, incorrect position, or not in the word. When guessed correctly, the last letter will become the start of the new word.
 # Table of Contents
 - [1 Project Overview](#1-project-overview)
    - [1.1 Main Concept](#11-main-concept)
