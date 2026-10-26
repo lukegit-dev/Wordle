@@ -151,26 +151,41 @@ Numerous bugs and tests were performed during the development of ScrambL. Some t
 
 The first test was previously 6 letters long and had a different idea. This has since been reverted to 5 due to scope creep.
 
-First test was to check if the word exists in the word list, and the minimum number of letters to accept is dependent on how many input boxes there are in the current row.
+| Test Number | Test Description | Test Data | Expected Output | Actual output |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| 1 | Check if the word exists in the word list | Test Data | Expected Output | Actual output |
+| 2 | check if the word exists in the word list | Test Data | Expected Output | Actual output |
+| 3 | check if the word exists in the word list | Test Data | Expected Output | Actual output |
+| 4 | check if the word exists in the word list | Test Data | Expected Output | Actual output |
+| 5 | check if the word exists in the word list | Test Data | Expected Output | Actual output |
+| 6 | check if the word exists in the word list | Test Data | Expected Output | Actual output |
 
+First test was to , and the minimum number of letters to accept is dependent on how many input boxes there are in the current row.
+
+### 2.1.1 Test 1
 <img src="images/Prototype%20Validity%20Word%20Test%203.png" alt="Validity test of word - check if 6 letter input in 6 input boxes but word that does not exist is correct"></img>
 
+### 2.1.2 Test 2
 The second test below shows that only 6 letter words are accepted, any other length is rejected.
 
 <img src="images/Prototype%20Validity%20Word%20Test%202.png" alt="Validity test of word - check if any word that does not fit in 6 letter"></img>
 
+### 2.1.3 Test 3
 Here is the updated version using 5 letter words, but only inputting 4 (or less for that matter) with the output log.
 
 <img src="images/Validity%20Word%20Test%202%20-%205%20letter.png" alt="Validity test of word - check if a real word exists that is 6 letters long and is accepted"></img>
 
+### 2.1.4 Test 4
 Checking word validity
 
 <img src="images/Prototype%20Validity%20Word%20Test%201.png" alt="Validity test of word - check if a real word exists that is 6 letters long and is accepted"></img>
 
+### 2.1.5 Test 5
 A gameplay example, but the word "AHEAD" only contains one E, yet guessing "SHEET" tells us there is another E within the word. This is because it just checks whether its included in the word, not also how many times.
 
 <img src="images/Contains%20One%20Letter%20Bug.png" alt="Gameplay example with double letter bug"></img>
 
+### 2.1.6 Test 6
 A bug after guessing the correct word, guessing was never reset to the first row, nor was the focus box.
 
 <img src="images/Word%20After%20Words%20Bug.png" alt="A bug after guessing the correct word, guessing was never reset to the first row, nor was the focus box."></img>
