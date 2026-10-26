@@ -205,7 +205,7 @@ Overall, this game has accurately met its requirements by re-creating wordle wit
 - No mobile / tablet support. This group may find it difficult to use ScrambL.
 ## 4.2 Reflection & Review
 ### 4.2.1 Development Process, decisions, challenges and problems faced
-Building ScrambL incrementally allows me to find bugs and log my development process better. Developing this, I first created a Python mockup version which worked only in console to prototype my main solution, as I was more familiar with this programming language, figuring out how I would go about doing this for JavaScript. Following this, I followed through with reading up on JavaScript using varying sources such as freeCodeCamp, stackoverflow, and w3schools.
+Building ScrambL incrementally allows me to find bugs and log my development process better. Developing this, I first created a Python mockup version which worked only in console to prototype my main solution, as I was more familiar with this programming language, figuring out how I would go about doing this for JavaScript (JS). Following this, I followed through with reading up on JS using varying sources such as freeCodeCamp, stackoverflow, and w3schools.
 
 When prototyping the main idea, I created the letter boxes first; 6 of them, as my idea was to initially have 6, and guessing each word would reduce it lower to 5 letter word, then 4, and 3. I reverted this change as my idea was too difficult to implement and due to the time constraint I had for this project.
 
@@ -238,6 +238,25 @@ Developing a prototype and creating tests were useful when developing the games 
 - GitHub & GitHub Desktop used for version control, updating changes, and storing the codebase.
 - Developer Tools - F12 gives access to the JavaScript console, used to debug code with output logs.
 - Pseudocode - Planned game logic with a more simple design
+## 4.4 Technical Problem Review
+This problem focuses on navigation functionality.
+### 4.4.1 Development Issue
+When guessing a word, the user would have to manually `TAB` to each box which became repetitive and is less user friendly. If the user wanted to delete a letter they would have to press `SHIFT+TAB` to go back boxes one at a time which is time consuming.
+
+Additionally, when navigating this way, you could cycle to the next row despite the word to be guessed must be in the first unfilled row from top to bottom. The unfilled boxes were still editable.
+### 4.4.2 Considered Solutions
+Restrict the user's navigation to the current row with one or more of the following:
+1. Keep existing manual `TAB` and `SHIFT+TAB` navigation with the current row restriction to keep them from going out of bounds.
+2. Auto navigation on letter pressed. Backspace to delete the last letter but no arrow key navigation to a specific letter using JS input event handling with focus on next / previous letter on key press.
+3. Auto navigation and arrow key navigation.
+### 4.4.3 Implemented Solution
+Going with option 2, I implemented event handling to improve letter box navigation, which moves the focus to the next box when the user inputs a letter, and backspace to delete a letter and focus on the prior box.
+
+When pressing backspace to move back a letter box, or the move to the next box when typing a letter, I made sure to stay in the bounds of the maximum and minimum limit, so the code does not break and try access a letter box that is non existent.
+### 4.4.4 Testing and Outcome
+By typing out a word, each input box moves as expected. Deleting letters also work the same way, and the focus is shifted back a box until it cant.
+
+Pressing `TAB` and `SHIFT+TAB` were made redundant, but still can access other boxes out of bounds. Despite this, users can always access the first row by going back with `SHIFT+TAB`. This is not documented in the rules, as it is not meant to be used.
 # 5. References
 - Benveniste, Alexis, and Jackie Frere. “A Collection of the Best Wordle Tips and Tricks.” The New York Times, 10 Feb. 2022, https://www.nytimes.com/2022/02/10/crosswords/best-wordle-tips.html. Accessed 23 Sept. 2026.
 - developer.mozilla.org. “HTML input element” MDN Web Docs, 10 Apr. 2025, https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input. Accessed 23 Sept. 2026.
