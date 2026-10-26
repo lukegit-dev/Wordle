@@ -20,7 +20,17 @@ Players are presented with a string of characters and attempt to find the hidden
 ## 1.3 Target Audience
 Puzzle players of any age who enjoy a challenge / brain teasers would be the primary audience for this game, however some words could be difficult to guess.
 ### 1.3.1 User Profile Example
-- Discuss needs and expectations
+Charlie is 60 years old. In his free time, he enjoys to read the local newspaper and do the daily puzzles, but recently felt like he needs something more complex, as most of the puzzles he has to wait a day to get the results, and some puzzles he feels are very "sameish". He works in a family run business; an antique store selling and buying valuable items. Charlie gets bored as during weekdays, as not many customers visit. He does research on his laptop for antiques but this can feel laborious. He wants to find another way to entertain himself during the day.
+#### 1.3.1.1 Needs
+- Something fairly challenging that he can think about (a puzzle).
+- Content that can be refreshed and give answers quicker.
+- A rest from reading and doing puzzles with writing material on a newspaper.
+#### 1.3.1.2 Expectations
+- A puzzle that he can continuously do throuhout his day.
+- A puzzle that is easily accessible.
+- Rules of a puzzle he can easily understand and start playing immediately.
+- Quicker and clear feedback from the puzzle.
+- No time pressure.
 ## 1.4 Requirements
 ### 1.4.1 Functional Requirements
 - 5 by 6 grid of letter input boxes.
