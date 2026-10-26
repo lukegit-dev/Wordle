@@ -120,13 +120,14 @@ Randomness may not feel as random. Starting with the last letter of the last cor
 - Real words that are not in the dictionary may confuse the user.
 #### 1.4.3.2 Scope
 In scope:
-    - Core guessing functionality and feedback system given to the user.
-    - Validating a word exists in the word list.
-    - An aesthetically pleasing User Interface.
+- Core guessing functionality and feedback system given to the user.
+- Validating a word exists in the word list.
+- An aesthetically pleasing User Interface.
+
 Out of scope:
-    - A proper data saving system that saves statistics for when you revisit the site.
-    - Multiplayer system to compare you against how others have done.
-    - Custom word list category
+- A proper data saving system that saves statistics for when you revisit the site.
+- Multiplayer system to compare you against how others have done.
+- Custom word list category
 #### 1.4.3.2 Dependencies
 - Creating enough words for the word list for the user to guess and word to be chosen in.
 - A random word picked from the word list that is 5 letters long.
