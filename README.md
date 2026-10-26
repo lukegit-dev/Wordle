@@ -16,7 +16,7 @@ Players are presented with a string of characters and attempt to find the hidden
 ## 1.2 Additional Features - **Last letter**
 1. 5 letter word is chosen, and must be guessed within 6 tries.
 2. If the player guesses correctly, a new word is created from the last letter of the correct word.
-3. The user continuously guesses until they get a word wrong. Their streak is recorded.
+3. The user continuously guesses until they get a word wrong. Their current and top streak are recorded.
 ## 1.3 Target Audience
 Puzzle players of any age who enjoy a challenge / brain teasers would be the primary audience for this game, however some words could be difficult to guess.
 ### 1.3.1 User Profile Example
@@ -80,6 +80,62 @@ Out of scope:
 - Testing data for validity testing.
 - Telling the user the rules of the game and how to play.
 # 2 Design
+## Pseudocode Example
+```pseudocode
+
+fiveLetterWordList = [...]
+
+MAX_GUESSES = 6
+
+wordToGuess = RANDOM(fiveLetterWordList)
+
+WHILE TRUE:
+    guesses = 0
+    WHILE guesses < MAX_GUESSES + 1:
+        guess = LIST(input("Enter a guess: "))
+
+        notInWord = []
+        wrongPosition = []
+        correctLetters = []
+
+        IF guess IN fiveLetterWordList:
+            FOR i IN length(guess):
+                IF fiveLetterWordList[i] == guess[i]:
+                    APPEND guess[i] TO correctLetters
+                ELSE
+                    APPEND guess[i] TO notInWord
+
+            FOR letter IN notInWord:
+                IF letter IN guess:
+                    APPEND letter TO wrongPosition
+                    REMOVE letter FROM notInWord
+        ELSE:
+            Show("Guess is invalid! Not in the word list!")
+
+        IF length(correctLetters) == 5:
+            Show("You won! Nice one!")
+            break
+        ELSE:
+            guesses = guesses + 1
+            
+            Show("Letters"+notInWord+"are not in the word!")
+            Show("Letters"+correctLetters+"are in the correct position!")  // Green colour
+            Show("Letters"+wrongPosition+"are in the wrong position!")  // Yellow colour
+
+    IF guesses > MAX_GUESSES:
+        Show("You lost! You ran out of guesses. The word was "+wordToGuess)
+        wordToGuess = RANDOM(fiveLetterWordList)
+    ELSE: // User won
+        lastLetter = wordToGuess[5]  // fifth letter is the last one
+        
+        LAST_LETTER_WORDS = []
+
+        FOR word IN fiveLetterWordList:
+            IF word[5] == lastLetter:
+                APPEND word TO LAST_LETTER_WORDS
+
+        wordToGuess = RANDOM(LAST_LETTER_WORDS)
+```
 ## 2.1 Initial Design
 The initial design will follow similar style to the official wordle by the New york times (2021) as described in my Main Concept title, where you have 6 letters and must guess the word in 6 tries.
 
