@@ -1,5 +1,5 @@
 # ScrambL - A descendant of Wordle
-Players are presented with a string of characters and attempt to find the hidden word or number sequence. Players will be informed when they find a correct character and whether it is in the correct position.
+Players are presented with a string of characters and attempt to find the hidden word sequence. Players will be informed when they find a correct character and whether it is in the correct position.
 # Table of Contents
 - Coming soon
 # 1 Project Overview
@@ -18,7 +18,7 @@ Players are presented with a string of characters and attempt to find the hidden
 2. If the player guesses correctly, a new word is created from the last letter of the correct word.
 3. The user continuously guesses until they get a word wrong. Their current and top streak are recorded.
 ## 1.3 Target Audience
-Puzzle players of any age who enjoy a challenge / brain teasers would be the primary audience for this game, however some words could be difficult to guess.
+Puzzle players of any age who enjoy a challenge or brain teasers would be the primary audience for this game, however some words could be difficult to guess.
 ### 1.3.1 User Profile Example
 Charlie is 60 years old. In his free time, he enjoys to read the local newspaper and do the daily puzzles, but recently felt like he needs something more complex, as most of the puzzles he has to wait a day to get the results, and some puzzles he feels are very "sameish". He works in a family run business; an antique store selling and buying valuable items. Charlie gets bored as during weekdays, as not many customers visit. He does research on his laptop for antiques but this can feel laborious. He wants to find another way to entertain himself during the day.
 #### 1.3.1.1 Needs
@@ -138,6 +138,10 @@ WHILE TRUE:
 ```
 ## 2.1 Initial Design
 The initial design will follow similar style to the official wordle by the New york times (2021) as described in my Main Concept title, where you have 6 letters and must guess the word in 6 tries.
+
+### 2.1.1 Flowchart
+This flowchart demonstrates how the main game logic is handled and how it functions for ScrambL, helping to visualize the game as a whole and how each stage is processed and completed.
+<img src="images/FLOWCHART.png" alt="ScrambL game logic flowchart"></img>
 
 The main design will be built for desktop:
 
@@ -260,6 +264,7 @@ Pressing `TAB` and `SHIFT+TAB` were made redundant, but still can access other b
 # 5. References
 - Benveniste, Alexis, and Jackie Frere. “A Collection of the Best Wordle Tips and Tricks.” The New York Times, 10 Feb. 2022, https://www.nytimes.com/2022/02/10/crosswords/best-wordle-tips.html. Accessed 23 Sept. 2026.
 - developer.mozilla.org. “HTML input element” MDN Web Docs, 10 Apr. 2025, https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input. Accessed 23 Sept. 2026.
+- draw.io (2025). Flowchart maker & online diagram software. app.diagrams.net. Available at: https://app.diagrams.net/ [Accessed 26 Oct. 2026].
 - figma.com (2023). Blue-gray color: Hex code, palettes & meaning. Figma. Available at: https://www.figma.com/colors/blue-gray/ [Accessed 25 Oct. 2026].
 - GeeksforGeeks (2018). Agile development models software engineering. GeeksforGeeks. Available at: https://www.geeksforgeeks.org/software-engineering/software-engineering-agile-development-models/ [Accessed 26 Oct. 2026].
 - “HTML Input Tag.” www.w3schools.com, 2024, https://www.w3schools.com/tags/tag_input.asp. Accessed 24 Sept. 2026.
