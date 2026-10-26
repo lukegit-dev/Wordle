@@ -270,7 +270,7 @@ function submitGuess() {
 
     // If our current row number is beyond the amount of rows we have, then they lost
     if (currentRow >= rows.length) {
-        messageDiv.textContent = "You ran out of guesses! Streak: "+currentStreak+" | Best Streak: "+topStreak;
+        messageDiv.textContent = "You ran out of guesses! The word was "+selectedWord+". Streak: "+currentStreak+" | Best Streak: "+topStreak;
         currentRow = 0;
         currentStreak = 0;  // Reset users current streak to zero
         gameOver = true;  // Set game state to game over
