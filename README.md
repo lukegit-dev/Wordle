@@ -151,14 +151,14 @@ Numerous bugs and tests were performed during the development of ScrambL. Some t
 
 The first test was previously 6 letters long and had a different idea. This has since been reverted to 5 due to scope creep.
 
-| Test Number | Test Description | Test Data | Expected Output | Actual output | Action Needed |
+| Test Number | Test Description | Test Data | Expected Output | Actual output & Pass or Fail | Action Needed |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| 1 | Check invalid word with 6 letters | LEMONZ | Invalid word | LEMONZ validity is false | N/A |
-| 2 | Check a correct word is invalid if it has < 6 letters | QUALM | Invalid Word | QUALM validity is false | N/A |
-| 3 | Check word less than 5 letters | PRIN | Invalid word / not filled | Invalid word! Not filled. Word 'PRIN' is not valid! | N/A |
-| 4 | Check a real word that exists in our word list | QUALMS | Valid word | QUALMS validity is true | N/A |
-| 5 | Test double letter included only once in the word | Sent: SHEET. Correct Word: AHEAD. | E in position 3 is green. E in position 4 is white. | Fail: E in position 3 is green. E in position 4 is yellow. | List double letters in word to guess, match X occurrences of that letter as max to turn yellow / green. If input contains 2 of that letter when word to guess only has one, match first occurrence of that letter, set other occurrences to grey |
-| 6 | Focus selection box and word row is reset to the start | Guess correct word on 4th try | Expected Output | Actual output | N/A |
+| 1 | Check invalid word with 6 letters | LEMONZ | Invalid word | **PASS:** LEMONZ validity is false | N/A |
+| 2 | Check a correct word is invalid if it has < 6 letters | QUALM | Invalid Word | **PASS:** QUALM validity is false | N/A |
+| 3 | Check word less than 5 letters | PRIN | Invalid word / not filled | **PASS:** Invalid word! Not filled. Word 'PRIN' is not valid! | N/A |
+| 4 | Check a real word that exists in our word list | QUALMS | Valid word | **PASS:** QUALMS validity is true | N/A |
+| 5 | Test double letter included only once in the word | Sent: SHEET. Correct Word: AHEAD. | E in position 3 is green. E in position 4 is white. | **FAIL:** E in position 3 is green. E in position 4 is yellow. | List double letters in word to guess, match X occurrences of that letter as max to turn yellow / green. If input contains 2 of that letter when word to guess only has one, match first occurrence of that letter, set other occurrences to grey |
+| 6 | Focus selection box and word row is reset to the start | Guess correct word on 4th try | Expected Output | **FAIL:** User guess in the next row and selection box is incremented there. | Reset current row and selection box back to the start row |
 
 First test was to , and the minimum number of letters to accept is dependent on how many input boxes there are in the current row.
 
@@ -202,7 +202,7 @@ Overall, this game has accurately met its requirements by re-creating wordle wit
     - Many words can end with letter S, which may be a common starting letter theme.
     - Specific letters could be very rare and not picked, like ending with Z or X
 - Currently there is no way to reset a word without losing your streak
-## 4.2 Reflection
+## 4.2 Reflection & Review
 ### 4.2.1 Development Process, decisions, challenges and problems faced
 Building ScrambL incrementally allows me to find bugs and log my development process better. Developing this, I first created a Python mockup version which worked only in console to prototype my main solution, as I was more familiar with this programming language, figuring out how I would go about doing this for JavaScript. Following this, I followed through with reading up on JavaScript using varying sources such as freeCodeCamp, stackoverflow, and w3schools.
 
