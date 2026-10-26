@@ -151,14 +151,14 @@ Numerous bugs and tests were performed during the development of ScrambL. Some t
 
 The first test was previously 6 letters long and had a different idea. This has since been reverted to 5 due to scope creep.
 
-| Test Number | Test Description | Test Data | Expected Output | Actual output |
-| ------------- | ------------- | ------------- | ------------- | ------------- |
-| 1 | Check if the word exists in the word list | Test Data | Expected Output | Actual output |
-| 2 | check if the word exists in the word list | Test Data | Expected Output | Actual output |
-| 3 | check if the word exists in the word list | Test Data | Expected Output | Actual output |
-| 4 | check if the word exists in the word list | Test Data | Expected Output | Actual output |
-| 5 | check if the word exists in the word list | Test Data | Expected Output | Actual output |
-| 6 | check if the word exists in the word list | Test Data | Expected Output | Actual output |
+| Test Number | Test Description | Test Data | Expected Output | Actual output | Action Needed |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| 1 | Check invalid word with 6 letters | LEMONZ | Invalid word | LEMONZ validity is false | N/A |
+| 2 | Check a correct word is invalid if it has < 6 letters | QUALM | Invalid Word | QUALM validity is false | N/A |
+| 3 | Check word less than 5 letters | PRIN | Invalid word / not filled | Invalid word! Not filled. Word 'PRIN' is not valid! | N/A |
+| 4 | Check a real word that exists in our word list | QUALMS | Valid word | QUALMS validity is true | N/A |
+| 5 | Test double letter included only once in the word | Sent: SHEET. Correct Word: AHEAD. | E in position 3 is green. E in position 4 is white. | Fail: E in position 3 is green. E in position 4 is yellow. | List double letters in word to guess, match X occurrences of that letter as max to turn yellow / green. If input contains 2 of that letter when word to guess only has one, match first occurrence of that letter, set other occurrences to grey |
+| 6 | Focus selection box and word row is reset to the start | Guess correct word on 4th try | Expected Output | Actual output | N/A |
 
 First test was to , and the minimum number of letters to accept is dependent on how many input boxes there are in the current row.
 
