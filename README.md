@@ -214,15 +214,32 @@ Through learning about event handling (when a user enters letters into each box)
 ### 4.2.2 Area for improvement
 - Developing UI compatability with devices such as mobile and tablet support would be the next step before advertising online, allowing for a wider audience range to reach.
 - Wins and losses could also be added to display the users total games played, and percentage won or lost, giving them some insight into how successful they are at guessing each word.
-
 ## 4.3 Development Considerations
-- Prototypes vs main version
+### 4.3.1 Prototyping
+Developing a Python prototype helped me understand how this would be programmed in JavaScript and HTML, building the logical foundation of how Wordle worked and thinking of ideas I could include.
+### 4.3.2 Development
+Using an iterative development process using the agile model to provide me with further flexibility, adaptation, and more rapid development (GeeksforGeeks, 2018). I would first define my requirements needed for the current process, and construct that specific part of the program. Tests were performed and recorded, with further fixes if it failed, and kept retesting it until it worked. I used this approach as it supports my initial prototype built in Python, where the same development process was used.
+#### 4.3.2.1 Strengths
+- Easier incremental debugging
+- Gradual improvement with logging of changes on GitHub.
+#### 4.3.2.2 Weaknesses
+- Focus was sometimes higher on the smaller things such as style and background colour than the main development.
+- Sometimes testing was not thorough enough, and a retest was needed with new solutions put in place, and comitted to GitHub.
+### 4.3.3 Current and Emerging Technologies
+- Python was used as the prototype allowing for more experimentation without worrying about the design.
+- Visual Studio Code:
+    - HTML & CSS used for designing how ScrambL looks
+    - JavaScript used for game logic and making HTML interactable (input boxes, custom messages)
+- GitHub & GitHub Desktop used for version control, updating changes, and storing the codebase.
+- Developer Tools - F12 gives access to the JavaScript console, used to debug code with output logs.
+- Pseudocode - Planned game logic with a more simple design
 ### To include
 - Used input boxes
 # 5. References
 - Benveniste, Alexis, and Jackie Frere. “A Collection of the Best Wordle Tips and Tricks.” The New York Times, 10 Feb. 2022, https://www.nytimes.com/2022/02/10/crosswords/best-wordle-tips.html. Accessed 23 Sept. 2026.
 - developer.mozilla.org. “HTML input element” MDN Web Docs, 10 Apr. 2025, https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input. Accessed 23 Sept. 2026.
 - figma.com (2023). Blue-gray color: Hex code, palettes & meaning. Figma. Available at: https://www.figma.com/colors/blue-gray/ [Accessed 25 Oct. 2026].
+- GeeksforGeeks (2018). Agile development models software engineering. GeeksforGeeks. Available at: https://www.geeksforgeeks.org/software-engineering/software-engineering-agile-development-models/ [Accessed 26 Oct. 2026].
 - “HTML Input Tag.” www.w3schools.com, 2024, https://www.w3schools.com/tags/tag_input.asp. Accessed 24 Sept. 2026.
 - New york times (2021). Wordle - a daily word game. www.nytimes.com. Available at: https://www.nytimes.com/games/wordle/index.html [Accessed 21 Oct. 2026].
 - Stack Overflow (2017). What is the JavaScript version of sleep()? Stack Overflow. Available at: https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep [Accessed 7 Oct. 2026].
