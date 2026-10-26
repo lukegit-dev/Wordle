@@ -202,6 +202,7 @@ Overall, this game has accurately met its requirements by re-creating wordle wit
     - Many words can end with letter S, which may be a common starting letter theme.
     - Specific letters could be very rare and not picked, like ending with Z or X
 - Currently there is no way to reset a word without losing your streak
+- No mobile / tablet support. This group may find it difficult to use ScrambL.
 ## 4.2 Reflection & Review
 ### 4.2.1 Development Process, decisions, challenges and problems faced
 Building ScrambL incrementally allows me to find bugs and log my development process better. Developing this, I first created a Python mockup version which worked only in console to prototype my main solution, as I was more familiar with this programming language, figuring out how I would go about doing this for JavaScript. Following this, I followed through with reading up on JavaScript using varying sources such as freeCodeCamp, stackoverflow, and w3schools.
@@ -209,7 +210,11 @@ Building ScrambL incrementally allows me to find bugs and log my development pro
 When prototyping the main idea, I created the letter boxes first; 6 of them, as my idea was to initially have 6, and guessing each word would reduce it lower to 5 letter word, then 4, and 3. I reverted this change as my idea was too difficult to implement and due to the time constraint I had for this project.
 
 Through learning about event handling (when a user enters letters into each box), and how to validate the inputs, I collected a large 5 letter word list.
-- Development process & individual performance, key decisions, challenges / problems, strengths and weaknesses, area for improvement (mobile UI support, win/losses and % statistics)
+
+### 4.2.2 Area for improvement
+- Developing UI compatability with devices such as mobile and tablet support would be the next step before advertising online, allowing for a wider audience range to reach.
+- Wins and losses could also be added to display the users total games played, and percentage won or lost, giving them some insight into how successful they are at guessing each word.
+
 ## 4.3 Development Considerations
 - Prototypes vs main version
 ### To include
