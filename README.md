@@ -1,7 +1,60 @@
 # ScrambL - A descendant of Wordle
 Players are presented with a string of characters and attempt to find the hidden word sequence. Players will be informed when they find a correct character and whether it is in the correct position.
 # Table of Contents
-- Coming soon
+- [1 Project Overview](#1-project-overview)
+   - [1.1 Main Concept](#11-main-concept)
+   - [1.2 Additional Features: Last letter Next Word](#12-additional-features-last-letter-next-word)
+   - [1.3 Target Audience](#13-target-audience)
+      - [1.3.1 User Profile Example](#131-user-profile-example)
+         - [1.3.1.1 Needs](#1311-needs)
+         - [1.3.1.2 Expectations](#1312-expectations)
+   - [1.4 Requirements](#14-requirements)
+      - [1.4.1 Functional Requirements](#141-functional-requirements)
+      - [1.4.2 Non-functional Requirements](#142-non-functional-requirements)
+         - [1.4.2.1 Usability](#1421-usability)
+         - [1.4.2.2 Accessibility](#1422-accessibility)
+         - [1.4.2.3 Performance](#1423-performance)
+         - [1.4.2.4 Visual Design](#1424-visual-design)
+      - [1.4.3 Potential Risks](#143-potential-risks)
+         - [1.4.3.1 Challenges](#1431-challenges)
+         - [1.4.3.2 Scope](#1432-scope)
+         - [1.4.3.2 Dependencies](#1432-dependencies)
+- [2 Design](#2-design)
+   - [Pseudocode Example](#pseudocode-example)
+   - [2.1 Initial Design](#21-initial-design)
+      - [2.1.1 Flowchart](#211-flowchart)
+   - [2.2 Finalized Design](#22-finalized-design)
+      - [2.2.1 Correct Word & Streak Saving](#221-correct-word-streak-saving)
+      - [2.2.1 Out of Guesses](#221-out-of-guesses)
+- [3 Development & Testing](#3-development-testing)
+      - [2.1.1 Test 1](#211-test-1)
+      - [2.1.2 Test 2](#212-test-2)
+      - [2.1.3 Test 3](#213-test-3)
+      - [2.1.4 Test 4](#214-test-4)
+      - [2.1.5 Test 5](#215-test-5)
+      - [2.1.6 Test 6](#216-test-6)
+- [4 Evaluation](#4-evaluation)
+   - [4.1 Meeting the Requirements](#41-meeting-the-requirements)
+      - [4.1.1 Overall Success](#411-overall-success)
+      - [4.1.2 Strengths](#412-strengths)
+      - [4.1.3 Weaknesses](#413-weaknesses)
+   - [4.2 Reflection & Review](#42-reflection-review)
+      - [4.2.1 Development Process, decisions, challenges and problems faced](#421-development-process-decisions-challenges-and-problems-faced)
+      - [4.2.2 Area for improvement](#422-area-for-improvement)
+   - [4.3 Development Considerations](#43-development-considerations)
+      - [4.3.1 Prototyping](#431-prototyping)
+      - [4.3.2 Development](#432-development)
+         - [4.3.2.1 Strengths](#4321-strengths)
+         - [4.3.2.2 Weaknesses](#4322-weaknesses)
+      - [4.3.3 Current and Emerging Technologies](#433-current-and-emerging-technologies)
+         - [4.3.3.1 Justification](#4331-justification)
+      - [4.3.4 Development Tools and Design Methods](#434-development-tools-and-design-methods)
+   - [4.4 Technical Problem Review](#44-technical-problem-review)
+      - [4.4.1 Development Issue](#441-development-issue)
+      - [4.4.2 Considered Solutions](#442-considered-solutions)
+      - [4.4.3 Implemented Solution](#443-implemented-solution)
+      - [4.4.4 Testing and Outcome](#444-testing-and-outcome)
+- [5. References](#5-references)
 # 1 Project Overview
 ## 1.1 Main Concept
 1. Guess a random hidden 5 letter word with each guess being a real 5 letter word.
@@ -13,7 +66,7 @@ Players are presented with a string of characters and attempt to find the hidden
 
     2.3 No change - The guessed letter does not exist in the word.
 3. You have 6 attempts to guess the correct word. If you fail to guess correctly after those 6 attempts, the game ends.
-## 1.2 Additional Features - **Last letter**
+## 1.2 Additional Features: Last letter Next Word
 1. 5 letter word is chosen, and must be guessed within 6 tries.
 2. If the player guesses correctly, a new word is created from the last letter of the correct word.
 3. The user continuously guesses until they get a word wrong. Their current and top streak are recorded.
@@ -42,10 +95,10 @@ Charlie is 60 years old. In his free time, he enjoys to read the local newspaper
 
 ### 1.4.2 Non-functional Requirements
 #### 1.4.2.1 Usability
-    - Simple to learn and play.
-    - A streak score is updated and shown visually to the user.
-    - The best streak is kept even when game is lost
-    - After guessing correctly, a new word is chosen starting with the last letter of the previously guessed word
+- Simple to learn and play.
+- A streak score is updated and shown visually to the user.
+- The best streak is kept even when game is lost
+- After guessing correctly, a new word is chosen starting with the last letter of the previously guessed word
 #### 1.4.2.2 Accessibility
 - Good use of colour contrast (background to foreground).
 - Dyslexia friendly fonts.
@@ -142,14 +195,16 @@ The initial design will follow similar style to the official wordle by the New y
 ### 2.1.1 Flowchart
 This flowchart demonstrates how the main game logic is handled and how it functions for ScrambL, helping to visualize the game as a whole and how each stage is processed and completed.
 <img src="images/FLOWCHART.png" alt="ScrambL game logic flowchart"></img>
-
-The main design will be built for desktop:
-
-<img src="images/main%20design.png" alt="Main Wordle Design"></img>
 ## 2.2 Finalized Design
-The finished design with streaks working, example guessin with feedback:
-
+### 2.2.1 Correct Word & Streak Saving
+The finished design with streaks working, and example guessing with message and colour feedback:
 <img src="images/Finalized.png" alt="A bug after guessing the correct word, guessing was never reset to the first row, nor was the focus box."></img>
+
+### 2.2.1 Out of Guesses
+Here is an example of when the user runs out of guesses. This displays message feedback about them losing and what the word was.
+
+<img src="images/Out%20of%20Guesses.png" alt="A bug after guessing the correct word, guessing was never reset to the first row, nor was the focus box."></img>
+
 # 3 Development & Testing
 Numerous bugs and tests were performed during the development of ScrambL. Some tests were performed on older versions (6 letter wordle) but have since been accepted as fixes that can be applied to 5 letter words.
 
